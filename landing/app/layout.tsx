@@ -1,22 +1,38 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Space_Grotesk } from "next/font/google"
+import { Inter } from "next/font/google"
 
 import "./globals.css"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: "swap"
 })
 
 export const metadata: Metadata = {
-  title: "PrismIQ - Policy Intelligence for Medical Billing Teams",
+  title: {
+    default: "PrismIQ - AI-Powered Denial Management for Healthcare",
+    template: "%s | PrismIQ"
+  },
   description:
-    "Look up payer requirements in seconds, not hours. PrismIQ delivers instant policy lookup, denial intelligence, and precedent tracking for medical billing teams.",
+    "Overturn denials with policy-level precision. PrismIQ is an AI-powered healthcare revenue cycle management platform focused on denial management for orthopedic and spine specialty practices.",
+  keywords: ["denial management", "healthcare RCM", "medical billing", "appeal automation", "orthopedic billing", "spine surgery billing"],
+  authors: [{ name: "PrismIQ Labs" }],
+  openGraph: {
+    title: "PrismIQ - AI-Powered Denial Management",
+    description: "Overturn denials with policy-level precision.",
+    url: "https://prismiqlabs.ai",
+    siteName: "PrismIQ",
+    type: "website",
+  },
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0891b2",
+  themeColor: "#0A0F1E",
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -25,8 +41,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className={`${inter.variable} bg-background`}>
+      <body className="font-sans antialiased min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   )
 }
