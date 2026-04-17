@@ -4,33 +4,35 @@
 
 @layer base {
   :root {
-    /* PrismIQ Design System */
-    --background: 222 47% 8%; /* #0A0F1E deep navy */
-    --foreground: 220 14% 91%; /* #E5E7EB off-white body text */
+    /* PrismIQ Design System - Refined */
+    --background: 220 50% 6%; /* #070D1A very deep navy */
+    --foreground: 220 14% 86%; /* #D1D5DB body text */
     
-    --card: 222 39% 11%; /* #111827 surface cards */
-    --card-foreground: 220 14% 91%;
+    --card: 220 39% 10%; /* #0E1626 surface cards */
+    --card-foreground: 220 14% 86%;
     
-    --popover: 222 39% 11%;
-    --popover-foreground: 220 14% 91%;
+    --popover: 220 39% 10%;
+    --popover-foreground: 220 14% 86%;
     
     --primary: 160 100% 48%; /* #00F5A0 teal */
-    --primary-foreground: 222 47% 8%;
+    --primary-foreground: 220 50% 6%;
     
-    --secondary: 222 39% 11%;
-    --secondary-foreground: 220 14% 91%;
+    --secondary: 220 39% 10%;
+    --secondary-foreground: 220 14% 86%;
     
-    --muted: 220 13% 18%; /* #1F2937 borders */
-    --muted-foreground: 218 11% 65%; /* #9CA3AF secondary text */
+    --muted: 220 26% 16%; /* #1A2438 borders/dividers */
+    --muted-foreground: 218 11% 46%; /* #6B7280 secondary text */
     
     --accent: 160 100% 48%;
-    --accent-foreground: 222 47% 8%;
+    --accent-foreground: 220 50% 6%;
     
-    --destructive: 0 72% 71%; /* #F87171 soft red */
+    --destructive: 0 84% 71%; /* #F87171 soft red */
     --destructive-foreground: 0 0% 100%;
     
-    --border: 220 13% 18%; /* #1F2937 */
-    --input: 220 13% 18%;
+    --warning: 43 96% 56%; /* #FBBF24 amber */
+    
+    --border: 220 26% 16%; /* #1A2438 */
+    --input: 220 26% 16%;
     --ring: 160 100% 48%;
     
     --radius: 0.625rem;
@@ -70,7 +72,18 @@
 
 @keyframes progress-fill {
   from { width: 0%; }
-  to { width: 85%; }
+  to { width: 80%; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-pulse-dot {
@@ -81,17 +94,31 @@
   animation: progress-fill 2s ease-out forwards;
 }
 
+.animate-fade-up {
+  animation: fade-up 0.4s ease-out forwards;
+}
+
 /* Focus styles */
 input:focus, textarea:focus, select:focus {
-  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  @apply outline-none border-primary;
+  box-shadow: 0 0 0 3px rgba(0, 245, 160, 0.08);
 }
 
 /* Page transitions */
 .page-transition {
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.2s ease-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero radial glow */
+.hero-glow {
+  background: radial-gradient(
+    600px circle at 75% 50%,
+    rgba(0, 245, 160, 0.04) 0%,
+    transparent 70%
+  );
 }
