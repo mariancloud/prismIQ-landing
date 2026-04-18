@@ -31,20 +31,17 @@ export default function AboutPage() {
               <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', fontSize: '11px', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                 THE BACKGROUND
               </div>
-              <p style={{ fontSize: '15px', color: '#D1D5DB', lineHeight: '1.75', maxWidth: '440px' }}>
+              <p style={{ fontSize: '14px', color: '#D1D5DB', lineHeight: '1.8', maxWidth: '420px' }}>
                 PrismIQ was built by a team that has spent decades watching the same problem repeat across industries: the people doing the real work are the last ones the technology was built for. In healthcare, that gap has a price tag. It&apos;s measured in denied claims, expired appeal windows, and revenue that practices earned and never collected.
               </p>
             </div>
-
-            {/* Divider */}
-            <div style={{ height: '1px', background: '#1A2438', margin: '48px 0' }} />
 
             {/* THE DISCIPLINE */}
             <div style={{ marginTop: '40px' }}>
               <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', fontSize: '11px', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                 THE DISCIPLINE
               </div>
-              <p style={{ fontSize: '15px', color: '#D1D5DB', lineHeight: '1.75', maxWidth: '440px' }}>
+              <p style={{ fontSize: '14px', color: '#D1D5DB', lineHeight: '1.8', maxWidth: '420px' }}>
                 The team brings together enterprise software architecture, hypergrowth product scaling, and deep customer workflow design — across healthcare, fintech, and enterprise technology. The discipline is simple: find the real problem underneath the stated one, then build the system around how work actually happens. Not how it theoretically should.
               </p>
             </div>
@@ -54,7 +51,7 @@ export default function AboutPage() {
               <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', fontSize: '11px', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                 THE MISSION
               </div>
-              <p style={{ fontSize: '15px', color: '#D1D5DB', lineHeight: '1.75', maxWidth: '440px' }}>
+              <p style={{ fontSize: '14px', color: '#D1D5DB', lineHeight: '1.8', maxWidth: '420px' }}>
                 That discipline is now focused entirely on a single problem: the $100B operational crisis in specialty healthcare. Payers have spent decades automating the denial. Practices have been left with a biller, a queue, and a 30-day window. PrismIQ is the correction — an intelligent machine that masters payer complexity, automates the path to payment, and returns revenue to the physicians who earned it.
               </p>
             </div>
@@ -107,7 +104,7 @@ export default function AboutPage() {
                 <div style={{ height: '1px', background: '#1A2438' }} />
 
                 {/* Bottom Tagline */}
-                <p style={{ fontSize: '13px', color: '#00F5A0', textAlign: 'center', fontStyle: 'italic', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '13px', color: '#00F5A0', textAlign: 'left', fontStyle: 'italic', lineHeight: '1.6', whiteSpace: 'nowrap' }}>
                   These aren&apos;t industry abstractions. They&apos;re what PrismIQ was built to fix.
                 </p>
               </div>
