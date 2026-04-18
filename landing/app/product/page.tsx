@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ClaimIqUI } from '@/components/claim-iq-ui'
 import { RiskCheckUI } from '@/components/risk-check-ui'
+import { PrismIqDashboard } from '@/components/prismiq-dashboard'
 
 export default function ProductPage() {
   return (
@@ -35,7 +36,7 @@ export default function ProductPage() {
               boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
               padding: '16px'
             }}>
-              <ClaimIqUI />
+              <PrismIqDashboard />
             </div>
           </div>
         </div>
