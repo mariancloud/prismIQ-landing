@@ -1,10 +1,5 @@
 'use client'
 
-export const metadata = {
-  title: "Security - PrismIQ",
-  description: "HIPAA-compliant. BAA-ready. SOC 2 in progress. We handle protected health information and take that responsibility seriously.",
-}
-
 const securityFeatures = [
   {
     title: "HIPAA Compliance",

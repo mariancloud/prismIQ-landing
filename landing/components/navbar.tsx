@@ -24,8 +24,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full z-50 h-16"
-          style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #1A2438' }}>
+    <nav className="fixed top-0 w-full z-50 h-16" style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #1A2438' }}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-h-11">

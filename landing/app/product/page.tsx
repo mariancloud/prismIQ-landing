@@ -2,12 +2,6 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import type { Metadata } from 'next'
-
-export const metadata = {
-  title: "Product - PrismIQ",
-  description: "Claim IQ and Risk Check - the platform built for specialty billing. High-value surgical claims, complex payer policies, and appeal deadlines.",
-}
 
 const claimFlowSteps = [
   {

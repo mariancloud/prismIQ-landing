@@ -1,10 +1,5 @@
 'use client'
 
-export const metadata = {
-  title: "About - PrismIQ",
-  description: "Built by someone who has spent a career closing exactly this kind of gap. Learn about PrismIQ's mission.",
-}
-
 export default function AboutPage() {
   return (
     <div style={{ paddingTop: '80px' }}>
