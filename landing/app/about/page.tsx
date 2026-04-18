@@ -2,119 +2,142 @@
 
 export default function AboutPage() {
   return (
-    <div style={{ paddingTop: '80px' }}>
-      {/* Hero */}
-      <section style={{ paddingTop: '72px', paddingBottom: '72px', background: 'var(--background)' }} className="px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: 'var(--accent-teal)' }}>
-            OUR STORY
+    <main style={{ background: '#070D1A', minHeight: '100vh', paddingTop: '80px' }}>
+      {/* Hero Band */}
+      <section style={{
+        background: '#0E1626',
+        borderBottom: '1px solid #1A2438',
+        paddingTop: '80px',
+        paddingBottom: '80px'
+      }} className="px-4">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-[1fr_1fr] gap-12 items-start">
+          {/* Left: Eyebrow + Headline */}
+          <div className="space-y-6">
+            <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0' }}>
+              OUR STORY
+            </div>
+            <h1 style={{ fontSize: '48px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1.2' }}>
+              Built by someone who knows exactly what payers are doing — and how to fix it.
+            </h1>
           </div>
-          <h1 style={{ fontSize: '52px', fontWeight: 'bold', color: 'var(--text-primary)' }} className="text-white">
-            Built by someone who has spent a career closing exactly this kind of gap.
-          </h1>
+
+          {/* Right: Photo Placeholder */}
+          <div style={{
+            background: 'linear-gradient(135deg, #1A2438 0%, #0E1626 100%)',
+            borderRadius: '12px',
+            aspectRatio: '3 / 4',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            padding: '24px'
+          }}>
+            <div>
+              <div style={{ fontSize: '14px', color: '#6B7280' }}>Founder Photo</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Founder Title */}
+        <div className="max-w-7xl mx-auto mt-12">
+          <div style={{ fontSize: '14px', color: '#00F5A0' }}>
+            Founder & CEO, PrismIQ
+          </div>
         </div>
       </section>
 
-      {/* Founder Section */}
-      <section style={{ paddingTop: '72px', paddingBottom: '72px', background: 'var(--background)' }} className="px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-[1.4fr_1fr] gap-12">
-            {/* Copy - 55% */}
-            <div className="space-y-6">
-              <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                PrismIQ wasn&apos;t built by someone who discovered healthcare. It was built by someone who spent decades developing the judgment to know a solvable problem when they see one.
-              </p>
-              <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                A career architecting enterprise transformations at the highest levels of consulting. Building and scaling technology products through hypergrowth — from zero to global. Advising startups across healthcare, fintech, logistics, and enterprise software on how to find the real problem underneath the stated one, and how to build the technology around how work actually happens rather than how it theoretically should.
-              </p>
-              <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                The through-line across all of it: organizations sitting on data they couldn&apos;t use, revenue they couldn&apos;t see, and customer workflows that technology had never been designed around. The discipline — relentlessly uncovering root truths before building the connective tissue that lets organizations scale without breaking — is what building category-defining companies actually requires. Not just brilliant technology. Operational maturity. The rare ability to turn vision into enduring dominance.
-              </p>
-              <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                That discipline is now focused entirely on a single problem: the $100B operational crisis in specialty healthcare. Payers have spent decades automating the denial. Practices have been left with a biller, a queue, and a 30-day window. PrismIQ is the correction — an intelligent machine that masters payer complexity, automates the path to payment, and returns revenue to the physicians who earned it.
-              </p>
-            </div>
-
-            {/* Avatar placeholder - 45% */}
-            <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '12px', padding: '40px', textAlign: 'center' }}>
-              <div style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '50%',
-                background: 'var(--border)',
-                margin: '0 auto 24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '48px'
-              }}>
-                👤
-              </div>
-              <div style={{ fontSize: '18px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '8px' }} className="text-white">
-                Neeraj Srivastava
-              </div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
-                Founder, PrismIQ
-              </div>
-              <a href="#" style={{ display: 'block', marginTop: '16px', color: 'var(--text-muted)' }} className="hover:text-accent-teal transition-colors">
-                LinkedIn ↗
-              </a>
-            </div>
+      {/* Mini-section 1: THE BACKGROUND */}
+      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-medium tracking-widest uppercase mb-6" style={{ color: '#00F5A0' }}>
+            THE BACKGROUND
           </div>
+          <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: '1.8' }}>
+            PrismIQ wasn&apos;t built by someone who discovered healthcare. It was built by someone who spent decades developing the judgment to know a solvable problem when they see one.
+          </p>
+        </div>
+      </section>
+
+      {/* Mini-section 2: THE DISCIPLINE */}
+      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#0E1626', borderTop: '1px solid #1A2438' }} className="px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-medium tracking-widest uppercase mb-6" style={{ color: '#00F5A0' }}>
+            THE DISCIPLINE
+          </div>
+          <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: '1.8' }}>
+            A career architecting enterprise transformations at the highest levels of consulting. Building and scaling technology products through hypergrowth — from zero to global. Advising startups across healthcare, fintech, logistics, and enterprise software on how to find the real problem underneath the stated one. The through-line: organizations sitting on data they couldn&apos;t use, revenue they couldn&apos;t see, and customer workflows that technology had never been designed around.
+          </p>
+        </div>
+      </section>
+
+      {/* Mini-section 3: THE MISSION */}
+      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-medium tracking-widest uppercase mb-6" style={{ color: '#00F5A0' }}>
+            THE MISSION
+          </div>
+          <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: '1.8' }}>
+            That discipline is now focused entirely on a single problem: the $100B operational crisis in specialty healthcare. Payers have spent decades automating the denial. Practices have been left with a biller, a queue, and a 30-day window. PrismIQ is the correction — an intelligent machine that masters payer complexity, automates the path to payment, and returns revenue to the physicians who earned it.
+          </p>
         </div>
       </section>
 
       {/* Physician Advisory Board */}
-      <section style={{ paddingTop: '72px', paddingBottom: '72px', background: 'var(--background)' }} className="px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-xs font-medium tracking-widest uppercase mb-8" style={{ color: 'var(--accent-teal)' }}>
-            PHYSICIAN ADVISORY BOARD
-          </div>
-          <h2 style={{ fontSize: '36px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '32px' }} className="text-white">
-            Clinical perspective, built in from the start.
-          </h2>
-
+      <section style={{
+        paddingTop: '80px',
+        paddingBottom: '80px',
+        background: '#0E1626',
+        borderTop: '1px solid #1A2438',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }} className="px-4">
+        <div style={{ maxWidth: '640px', width: '100%' }}>
           <div style={{
-            background: 'var(--surface)',
-            border: '3px solid var(--accent-teal)',
+            background: '#070D1A',
+            border: '1px solid #1A2438',
+            borderLeft: '3px solid #00F5A0',
             borderRadius: '12px',
-            padding: '40px'
+            padding: '48px',
+            textAlign: 'center'
           }}>
-            <div className="grid md:grid-cols-[120px_1fr] gap-8 md:gap-12">
-              {/* Avatar */}
-              <div style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '50%',
-                background: 'var(--border)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '48px',
-                flexShrink: 0
-              }}>
-                👨‍⚕️
-              </div>
-
-              {/* Content */}
-              <div>
-                <h3 style={{ fontSize: '18px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '8px' }} className="text-white">
-                  Darina Stanyekeva, MD
-                </h3>
-                <div className="inline-flex px-3 py-1.5 rounded-full text-xs font-medium mb-4" style={{
-                  background: 'var(--border)',
-                  color: 'var(--accent-teal)'
-                }}>
-                  Physician Advisor, PrismIQ
-                </div>
-                <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                  Dr. Stanyekeva brings direct clinical perspective to PrismIQ&apos;s denial logic and appeal generation. Her firsthand experience with revenue cycle challenges in specialty practice directly informs how PrismIQ prioritizes payer policy coverage and documentation requirements across complex, high-value procedures.
-                </p>
-              </div>
+            {/* Avatar Placeholder */}
+            <div style={{
+              width: '80px',
+              height: '80px',
+              borderRadius: '50%',
+              background: '#1A2438',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 24px',
+              fontSize: '32px',
+              fontWeight: 'bold',
+              color: '#00F5A0'
+            }}>
+              DS
             </div>
+
+            {/* Name */}
+            <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#FFFFFF', marginBottom: '8px' }}>
+              Darina Stanyekeva, MD
+            </h3>
+
+            {/* Title */}
+            <p style={{ fontSize: '14px', color: '#00F5A0', marginBottom: '24px' }}>
+              Physician Advisor, PrismIQ
+            </p>
+
+            {/* Divider */}
+            <div style={{ height: '1px', background: '#1A2438', marginBottom: '24px' }} />
+
+            {/* Bio */}
+            <p style={{ fontSize: '16px', color: '#D1D5DB', lineHeight: '1.7' }}>
+              Denial management has always been a black box for most specialty practices — time-consuming, inconsistent, and expensive to outsource. PrismIQ brings transparency and speed to a process that desperately needed both. I&apos;ve seen firsthand how much revenue slips through the cracks in complex billing. This platform closes that gap.
+            </p>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }

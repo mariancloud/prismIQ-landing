@@ -2,7 +2,7 @@
 
 export function ProblemSection() {
   return (
-    <section style={{ background: '#0E1626', paddingTop: '128px', paddingBottom: '128px' }} className="px-4">
+    <section style={{ background: '#0E1626', paddingTop: '128px', paddingBottom: '64px' }} className="px-4">
       <div className="max-w-3xl mx-auto text-center space-y-8">
         {/* Large stat */}
         <div>

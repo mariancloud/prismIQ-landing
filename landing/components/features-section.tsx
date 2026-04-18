@@ -42,6 +42,10 @@ export function FeaturesSection() {
               style={{
                 background: '#0E1626',
                 border: feature.highlighted ? '3px solid #00F5A0' : '1px solid #1A2438',
+                borderLeft: feature.highlighted ? '3px solid #00F5A0' : '1px solid #1A2438',
+                borderRight: 'none',
+                borderTop: 'none',
+                borderBottom: 'none',
                 borderRadius: '12px',
                 padding: '48px',
                 position: 'relative',
@@ -55,7 +59,7 @@ export function FeaturesSection() {
                 (e.currentTarget as HTMLElement).style.boxShadow = 'none'
               }}
             >
-              <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--text-primary)' }} className="text-white mb-2">
+              <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: '#FFFFFF' }} className="text-white mb-2">
                 {feature.title}
               </h3>
               <p style={{ fontSize: '16px', color: '#00F5A0', fontWeight: 'normal' }} className="mb-4">

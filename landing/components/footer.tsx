@@ -2,17 +2,11 @@ import Link from "next/link"
 
 function PrismLogo() {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Center triangle outline in white */}
-      <polygon points="20,6 34,30 6,30" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Rainbow rays dispersing from center point (20, 18) */}
-      <line x1="20" y1="18" x2="20" y2="2" stroke="#FF6B6B" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="32" y2="6" stroke="#FFA500" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="38" y2="20" stroke="#FFD700" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="28" y2="36" stroke="#00FF88" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="12" y2="36" stroke="#00F5A0" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="2" y2="20" stroke="#0088FF" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
+    <img 
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
+      alt="PrismIQ Logo"
+      className="w-12 h-12 object-contain"
+    />
   )
 }
 
@@ -105,7 +99,7 @@ export function Footer() {
         {/* Bottom divider */}
         <div style={{ borderTop: '1px solid #1A2438', paddingTop: '24px' }} className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-sm" style={{ color: '#6B7280' }}>
             © 2025 PrismIQ Labs, Inc.
           </p>
 

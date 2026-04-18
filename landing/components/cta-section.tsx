@@ -7,14 +7,11 @@ export function CTASection() {
     <section style={{
       paddingTop: '128px',
       paddingBottom: '128px',
-      background: '#070D1A',
+      background: 'radial-gradient(ellipse at 30% 50%, rgba(0,245,160,0.07) 0%, transparent 70%), #0E1626',
+      borderTop: '1px solid #1A2438',
+      borderBottom: '1px solid #1A2438',
       position: 'relative'
     }} className="px-4 overflow-hidden">
-      {/* Subtle diagonal gradient */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'linear-gradient(to right, rgba(0, 245, 160, 0.06), transparent)',
-        zIndex: 0
-      }} />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         <h2 style={{ fontSize: '40px', fontWeight: 'bold', color: '#FFFFFF' }} className="text-white">

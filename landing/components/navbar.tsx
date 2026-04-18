@@ -9,7 +9,8 @@ function PrismLogo() {
     <img 
       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
       alt="PrismIQ Logo"
-      className="w-10 h-10 object-contain"
+      className="w-12 h-12 object-contain"
+      style={{ minHeight: '44px' }}
     />
   )
 }
@@ -28,16 +29,16 @@ export function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: '#6B7280' }}>
+          <Link href="/" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
             Home
           </Link>
-          <Link href="/product" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: '#6B7280' }}>
+          <Link href="/product" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
             Product
           </Link>
-          <Link href="/security" className="text-sm font-medium hover:text-accent-teal transition-colors"             style={{ color: '#6B7280' }}>
+          <Link href="/security" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
             Security
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-accent-teal transition-colors"             style={{ color: '#6B7280' }}>
+          <Link href="/about" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
             About
           </Link>
         </div>
@@ -78,22 +79,23 @@ export function Navbar() {
           className="md:hidden fixed inset-0 top-16 z-40 flex flex-col items-center justify-start pt-8 gap-6 px-4"
           style={{ background: 'rgba(7, 13, 26, 0.95)', backdropFilter: 'blur(8px)' }}
         >
-          <Link href="/" className="text-base font-medium transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+            <Link href="/" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Home
           </Link>
-          <Link href="/product" className="text-base font-medium transition-colors"             style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/product" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Product
           </Link>
-          <Link href="/security" className="text-base font-medium transition-colors"             style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/security" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Security
           </Link>
-          <Link href="/about" className="text-base font-medium transition-colors"             style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/about" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }}
+            onClick={() => setMobileOpen(false)}
             About
           </Link>
           <Link 
             href="/pilot" 
             className="px-6 py-2 rounded-lg font-semibold text-sm transition-all mt-4 inline-block"
-            style={{ backgroundColor: 'var(--accent-teal)', color: 'var(--background)' }}
+            style={{ backgroundColor: '#00F5A0', color: '#070D1A' }}
             onClick={() => setMobileOpen(false)}
           >
             Request a Pilot

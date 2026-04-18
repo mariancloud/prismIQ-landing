@@ -40,6 +40,7 @@ export function HowItWorksSection() {
               style={{
                 background: '#0E1626',
                 border: '1px solid #1A2438',
+                borderTop: '3px solid #00F5A0',
                 borderRadius: '12px',
                 padding: '40px',
                 position: 'relative'
@@ -59,8 +60,8 @@ export function HowItWorksSection() {
                 right: 0,
                 fontSize: '120px',
                 fontWeight: 'bold',
-                color: '#1A2438',
-                opacity: 0.5,
+                color: '#1F2937',
+                opacity: 1,
                 lineHeight: '1',
                 overflow: 'hidden'
               }}>
@@ -72,7 +73,7 @@ export function HowItWorksSection() {
                 <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#00F5A0' }}>
                   {step.number}
                 </div>
-                <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
+                <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#FFFFFF' }} className="text-white">
                   {step.title}
                 </h3>
                 <p style={{ fontSize: '17px', color: '#D1D5DB', lineHeight: '1.7' }}>

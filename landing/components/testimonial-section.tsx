@@ -10,7 +10,7 @@ export function TestimonialSection() {
         </div>
 
         {/* Large quotation mark */}
-        <div style={{ fontSize: '96px', lineHeight: '1', color: '#00F5A0', opacity: 0.3 }}>
+        <div style={{ fontSize: '120px', lineHeight: '0.8', color: '#00F5A0', fontWeight: '700', display: 'block', textAlign: 'center' }}>
           "
         </div>
 
