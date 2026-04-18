@@ -10,7 +10,7 @@ function PrismLogo() {
       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
       alt="PrismIQ Logo"
       className="w-12 h-12 object-contain"
-      style={{ minHeight: '44px' }}
+      style={{ width: '48px', height: '48px' }}
     />
   )
 }
@@ -21,10 +21,13 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 h-16" style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #1A2438' }}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-h-11">
+        {/* Logo Block: Logo + Wordmark + Tagline */}
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <PrismLogo />
-          <span className="text-white font-semibold text-base hidden sm:inline">PrismIQ</span>
+          <div className="flex flex-col gap-0">
+            <span className="text-white font-bold text-lg leading-tight">PrismIQ</span>
+            <span className="text-xs italic" style={{ color: '#6B7280', letterSpacing: '0.02em' }}>Revenue belongs to the physicians who earned it.</span>
+          </div>
         </Link>
 
         {/* Desktop Nav Links */}
