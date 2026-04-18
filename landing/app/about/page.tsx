@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function AboutPage() {
   return (
     <main style={{ background: '#070D1A', minHeight: '100vh', paddingTop: '80px' }}>
@@ -102,6 +104,32 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </main>
-  )
+
+      {/* CTA Section */}
+      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 style={{ fontSize: '32px', fontWeight: 'bold', color: '#FFFFFF' }} className="text-white">
+            The problem is real. The platform is ready.
+          </h2>
+          <p style={{ fontSize: '16px', color: '#6B7280' }}>
+            Join the practices already recovering revenue they earned.
+          </p>
+          <Link
+            href="/pilot"
+            className="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+            style={{
+              backgroundColor: '#00F5A0',
+              color: '#070D1A'
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)'
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+            }}
+          >
+            Request a Pilot →
+          </Link>
+        </div>
+      </section>
 }
