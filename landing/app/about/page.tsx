@@ -62,7 +62,7 @@ export default function AboutPage() {
               gap: '32px'
             }}>
               {/* Stat 1: $100B */}
-              <div>
+              <div style={{ paddingLeft: '0', borderLeft: 'none' }}>
                 <div style={{ fontSize: '56px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1', marginBottom: '12px' }}>
                   $100B
                 </div>
@@ -72,21 +72,21 @@ export default function AboutPage() {
               </div>
 
               {/* Stat 2: 65% */}
-              <div>
-                <div style={{ fontSize: '56px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1', marginBottom: '12px' }}>
+              <div style={{ paddingLeft: '16px', borderLeft: '3px solid #FBBF24' }}>
+                <div style={{ fontSize: '56px', fontWeight: '700', color: '#FBBF24', lineHeight: '1', marginBottom: '12px' }}>
                   65%
                 </div>
-                <p style={{ fontSize: '14px', color: '#6B7280', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '14px', color: '#9CA3AF', lineHeight: '1.6' }}>
                   of denied specialty claims are never appealed — not because they aren&apos;t winnable, but because there isn&apos;t time
                 </p>
               </div>
 
               {/* Stat 3: 12–18% */}
-              <div>
-                <div style={{ fontSize: '56px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1', marginBottom: '12px' }}>
+              <div style={{ paddingLeft: '16px', borderLeft: '3px solid #F87171' }}>
+                <div style={{ fontSize: '56px', fontWeight: '700', color: '#F87171', lineHeight: '1', marginBottom: '12px' }}>
                   12–18%
                 </div>
-                <p style={{ fontSize: '14px', color: '#6B7280', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '14px', color: '#9CA3AF', lineHeight: '1.6' }}>
                   average denial rate for high-value surgical and specialty procedures
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
               <div style={{ height: '1px', background: '#1A2438' }} />
 
               {/* Bottom Tagline */}
-              <p style={{ fontSize: '13px', color: '#6B7280', textAlign: 'center', fontStyle: 'italic', lineHeight: '1.6' }}>
+              <p style={{ fontSize: '13px', color: '#00F5A0', textAlign: 'center', fontStyle: 'italic', lineHeight: '1.6' }}>
                 These aren&apos;t industry abstractions. They&apos;re what PrismIQ was built to fix.
               </p>
             </div>
