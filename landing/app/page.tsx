@@ -4,7 +4,6 @@ import { HowItWorksSection } from "@/components/how-it-works-section"
 import { FeaturesSection } from "@/components/features-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { StatBandSection } from "@/components/stat-band-section"
-import { CTASection } from "@/components/cta-section"
 
 export const metadata = {
   title: "PrismIQ - AI-Powered Denial Management",
@@ -20,7 +19,6 @@ export default function HomePage() {
       <FeaturesSection />
       <TestimonialSection />
       <StatBandSection />
-      <CTASection />
     </div>
   )
 }
