@@ -1,54 +1,84 @@
-import { Upload, Search, FileText } from "lucide-react"
+'use client'
 
 const steps = [
   {
     number: "01",
-    icon: Upload,
-    title: "Connect ERA/835",
-    description: "Upload denied claims or connect your ERA/835 feed directly. We accept all major clearinghouse formats.",
+    title: "Connect your ERA/835 feed",
+    description: "Upload denied claims or connect your ERA/835 feed directly from your clearinghouse. PrismIQ accepts all major formats — Availity, Change Healthcare, Office Ally, and more. No new software to install.",
   },
   {
     number: "02",
-    icon: Search,
-    title: "PrismIQ analyzes payer policy",
-    description: "Our AI cross-references the denial reason code against current payer policy language and medical necessity criteria.",
+    title: "Claim IQ™ translates the denial",
+    description: "Every CARC code is translated into plain English — what it means, why the payer used it, and whether it's worth appealing. PrismIQ flags the denial confidence level and estimated recovery value so your team prioritizes the right claims first.",
   },
   {
     number: "03",
-    icon: FileText,
-    title: "Receive your appeal letter",
-    description: "You receive a policy-cited, ready-to-send appeal letter within 48 hours. No templates — constructed arguments.",
+    title: "We read their rulebook. Then we use it against them.",
+    description: "The AI cross-references your specific procedure, payer, and denial reason against live payer policy documents using retrieval-augmented generation. You get the exact policy clause the payer used — and the counter-argument, built from their own language, ready to deploy.",
   },
 ]
 
 export function HowItWorksSection() {
   return (
-    <section className="py-20 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-balance">
-            From denied claim to appeal letter in three simple steps.
+    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: 'var(--background)' }} className="px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
+            HOW IT WORKS
+          </div>
+          <h2 style={{ fontSize: '36px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
+            From denied claim to appeal letter in three steps.
           </h2>
         </div>
 
+        {/* Steps */}
         <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step) => (
+          {steps.map((step, idx) => (
             <div
               key={step.number}
-              className="relative rounded-xl bg-card border border-border p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '40px',
+                position: 'relative'
+              }}
+              className="transition-all duration-300 hover:border-accent-teal"
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 32px rgba(0, 245, 160, 0.08)'
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+              }}
             >
-              <div className="absolute -top-3 left-6 bg-primary text-background text-xs font-bold px-3 py-1 rounded-md">
+              {/* Step watermark */}
+              <div style={{
+                position: 'absolute',
+                bottom: 0,
+                right: 0,
+                fontSize: '120px',
+                fontWeight: 'bold',
+                color: 'var(--border)',
+                opacity: 0.5,
+                lineHeight: '1',
+                overflow: 'hidden'
+              }}>
                 {step.number}
               </div>
-              <div className="mt-4 mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-                <step.icon className="h-6 w-6 text-primary" />
+
+              {/* Content */}
+              <div className="relative z-10 space-y-4">
+                <div style={{ fontSize: '48px', fontWeight: 'bold', color: 'var(--accent-teal)' }}>
+                  {step.number}
+                </div>
+                <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
+                  {step.title}
+                </h3>
+                <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {step.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {step.description}
-              </p>
             </div>
           ))}
         </div>

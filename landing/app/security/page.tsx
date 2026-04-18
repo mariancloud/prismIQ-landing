@@ -1,82 +1,82 @@
-import type { Metadata } from "next"
-import { Shield, FileText, ClipboardCheck, Mail } from "lucide-react"
+'use client'
 
-export const metadata: Metadata = {
-  title: "Security",
+export const metadata = {
+  title: "Security - PrismIQ",
   description: "HIPAA-compliant. BAA-ready. SOC 2 in progress. We handle protected health information and take that responsibility seriously.",
 }
 
 const securityFeatures = [
   {
-    icon: Shield,
     title: "HIPAA Compliance",
-    description: "All PHI processed through PrismIQ is handled in accordance with HIPAA requirements. Data is encrypted in transit (TLS 1.2+) and at rest (AES-256). We do not use patient data for model training.",
+    description: "All PHI processed through PrismIQ is handled in full accordance with HIPAA requirements. Data is encrypted in transit (TLS 1.2+) and at rest (AES-256). We do not use patient data to train our models — ever."
   },
   {
-    icon: FileText,
     title: "BAA Ready",
-    description: "PrismIQ executes Business Associate Agreements with all pilot and production customers before any claims data is shared. Request a BAA as part of your pilot onboarding — it takes less than 24 hours.",
+    description: "PrismIQ executes Business Associate Agreements with all pilot and production customers before any claims data is shared. A BAA is included as standard in pilot onboarding and takes less than 24 hours to execute."
   },
   {
-    icon: ClipboardCheck,
     title: "SOC 2 Type II (In Progress)",
-    description: "We are currently completing our SOC 2 Type II audit. Documentation available to enterprise customers and RCM partners on request.",
+    description: "We are currently completing our SOC 2 Type II audit. Security documentation and our current controls framework are available to enterprise customers and RCM partners on request."
   },
 ]
 
 export default function SecurityPage() {
   return (
-    <div className="page-transition">
+    <div style={{ paddingTop: '80px' }}>
       {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance">
+      <section style={{ paddingTop: '72px', paddingBottom: '72px', background: 'var(--background)' }} className="px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: 'var(--accent-teal)' }}>
+            TRUST & COMPLIANCE
+          </div>
+          <h1 style={{ fontSize: '52px', fontWeight: 'bold', color: 'var(--text-primary)', marginBottom: '24px' }} className="text-white">
             HIPAA-compliant. BAA-ready. SOC 2 in progress.
           </h1>
-          <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            We handle protected health information. We take that seriously.
+          <p style={{ fontSize: '20px', color: 'var(--text-muted)' }}>
+            We process protected health information. We treat that responsibility seriously.
           </p>
         </div>
       </section>
 
       {/* Security Features */}
-      <section className="py-20 lg:py-32 bg-card">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="flex flex-col gap-8">
+      <section style={{ paddingTop: '72px', paddingBottom: '72px', background: 'var(--background)' }} className="px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {securityFeatures.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl bg-background border border-border p-8 transition-all hover:border-primary/30"
+                style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '12px',
+                  padding: '40px'
+                }}
+                className="transition-all duration-300 hover:border-accent-teal"
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 32px rgba(0, 245, 160, 0.08)'
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+                }}
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-primary/10 border border-primary/20 flex-shrink-0">
-                    <feature.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-white mb-3">
-                      {feature.title}
-                    </h2>
-                    <p className="text-muted-foreground leading-relaxed text-lg">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
+                <h3 style={{ fontSize: '22px', fontWeight: 'bold', color: 'var(--text-primary)', marginBottom: '16px' }} className="text-white">
+                  {feature.title}
+                </h3>
+                <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
 
           {/* Contact */}
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center gap-2 text-muted-foreground">
-              <Mail className="h-4 w-4" />
-              <span>Questions about our security posture?</span>
-              <a
-                href="mailto:security@prismiqlabs.ai"
-                className="text-primary hover:underline"
-              >
-                security@prismiqlabs.ai
+          <div className="text-center mt-16">
+            <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+              Questions about our security posture?{' '}
+              <a href="mailto:security@prismiqlabs.ai" style={{ color: 'var(--accent-teal)' }} className="hover:underline font-medium">
+                Email security@prismiqlabs.ai
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </section>

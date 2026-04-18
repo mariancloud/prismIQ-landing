@@ -1,51 +1,78 @@
+'use client'
+
 const features = [
   {
     title: "Claim IQ™",
     subtitle: "Your remittance, translated.",
     description: "Drop in your 835 file. Claim IQ reads every line — what the payer paid, what they cut, and why — in plain English. Then it tells you which denials are worth fighting and writes the appeal argument, already citing the payer's own policy language.",
     tags: ["All major clearinghouse formats", "Anthem, UHC, Aetna"],
+    highlighted: true,
   },
   {
     title: "Risk Check",
     subtitle: "Know before you submit.",
-    description: "Before a high-value claim goes out, run it through Risk Check. Enter the payer, procedure, and what documentation you have on hand. You'll get a denial probability score and a specific list of what's missing — so the claim goes out clean the first time.",
+    description: "Before a high-value claim goes out, run it through Risk Check. Enter the payer, CPT code, and documentation on hand. You'll get a denial probability score and a documentation readiness checklist — so the claim goes out clean the first time.",
     tags: ["Pre-submission · Post-denial", "CPT and payer-specific"],
+    highlighted: false,
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 lg:py-32 bg-card">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
-            Two tools. One goal: every dollar back.
+    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: 'var(--background)' }} className="px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+          <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
+            THE PLATFORM
+          </div>
+          <h2 style={{ fontSize: '40px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
+            From remittance to appeal. From submission to certainty.
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Purpose-built for orthopedic and spine billing teams.
+          <p style={{ fontSize: '18px', color: 'var(--text-muted)' }}>
+            Purpose-built for specialty billing teams managing complex, high-value claims.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature) => (
+        {/* Two column layout */}
+        <div className="grid md:grid-cols-[1.4fr_1fr] gap-8">
+          {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="relative rounded-xl bg-background border border-border p-8 border-l-4 border-l-primary transition-all hover:shadow-lg hover:shadow-primary/5"
+              style={{
+                background: 'var(--surface)',
+                border: feature.highlighted ? '3px solid var(--accent-teal)' : '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '48px',
+                position: 'relative',
+                order: feature.highlighted ? -1 : 0
+              }}
+              className="transition-all duration-300"
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 32px rgba(0, 245, 160, 0.08)'
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+              }}
             >
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--text-primary)' }} className="text-white mb-2">
                 {feature.title}
               </h3>
-              <p className="text-primary font-medium mb-4">
+              <p style={{ fontSize: '16px', color: 'var(--accent-teal)', fontWeight: 'normal' }} className="mb-4">
                 {feature.subtitle}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }} className="mb-6">
                 {feature.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {feature.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex px-3 py-1 rounded-full bg-muted/50 border border-border text-xs font-medium text-muted-foreground"
+                    className="inline-flex px-3 py-1 rounded-full text-xs font-medium"
+                    style={{
+                      background: 'var(--border)',
+                      color: 'var(--text-muted)'
+                    }}
                   >
                     {tag}
                   </span>

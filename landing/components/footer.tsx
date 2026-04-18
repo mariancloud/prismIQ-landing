@@ -1,16 +1,31 @@
 import Link from "next/link"
-import { Shield, FileCheck, FileText } from "lucide-react"
+
+function PrismLogo() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Center triangle outline in white */}
+      <polygon points="20,6 34,30 6,30" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Rainbow rays dispersing from center point (20, 18) */}
+      <line x1="20" y1="18" x2="20" y2="2" stroke="#FF6B6B" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="20" y1="18" x2="32" y2="6" stroke="#FFA500" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="20" y1="18" x2="38" y2="20" stroke="#FFD700" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="20" y1="18" x2="28" y2="36" stroke="#00FF88" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="20" y1="18" x2="12" y2="36" stroke="#00F5A0" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="20" y1="18" x2="2" y2="20" stroke="#0088FF" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  )
+}
 
 const footerLinks = {
   product: [
+    { href: "/", label: "Home" },
     { href: "/product", label: "Product" },
-    { href: "/product#claim-iq", label: "Claim IQ" },
-    { href: "/product#risk-check", label: "Risk Check" },
+    { href: "/security", label: "Security" },
   ],
   company: [
     { href: "/about", label: "About" },
-    { href: "/security", label: "Security" },
     { href: "/pilot", label: "Request a Pilot" },
+    { href: "mailto:hello@prismiqlabs.ai", label: "hello@prismiqlabs.ai" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -18,60 +33,30 @@ const footerLinks = {
   ],
 }
 
-const badges = [
-  { icon: Shield, label: "HIPAA" },
-  { icon: FileCheck, label: "SOC 2" },
-  { icon: FileText, label: "BAA Ready" },
-]
-
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid gap-8 lg:grid-cols-5">
-          {/* Logo and description */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-card border border-border">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <polygon 
-                    points="12,2 22,20 2,20" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="1.5"
-                    className="text-muted-foreground"
-                  />
-                  <polygon 
-                    points="12,8 17,16 7,16" 
-                    fill="currentColor"
-                    className="text-primary"
-                  />
-                </svg>
-              </div>
-              <span className="text-lg font-semibold text-white tracking-tight">
-                PrismIQ
-              </span>
+    <footer style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
+      <div className="max-w-7xl mx-auto px-4 py-12 lg:py-16">
+        {/* Top section with logo and links */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Logo */}
+          <div className="md:col-span-1">
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity mb-6">
+              <PrismLogo />
+              <span className="text-white font-semibold text-base hidden sm:inline">PrismIQ</span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              AI-powered denial management for orthopedic and spine specialty practices. Every dollar back.
-            </p>
           </div>
 
           {/* Product links */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Product</h3>
+            <h3 className="text-sm font-semibold text-text-primary mb-4" style={{ color: 'var(--text-primary)' }}>Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-accent-teal"
+                    style={{ color: 'var(--text-muted)' }}
                   >
                     {link.label}
                   </Link>
@@ -82,13 +67,14 @@ export function Footer() {
 
           {/* Company links */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
+            <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-accent-teal"
+                    style={{ color: 'var(--text-muted)' }}
                   >
                     {link.label}
                   </Link>
@@ -99,13 +85,14 @@ export function Footer() {
 
           {/* Legal links */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Legal</h3>
+            <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-accent-teal"
+                    style={{ color: 'var(--text-muted)' }}
                   >
                     {link.label}
                   </Link>
@@ -115,21 +102,24 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © 2025 PrismIQ Labs, Inc. All rights reserved.
+        {/* Bottom divider */}
+        <div style={{ borderTop: '1px solid var(--border)', paddingTop: '24px' }} className="flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Copyright */}
+          <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+            © 2025 PrismIQ Labs, Inc.
           </p>
+
+          {/* Compliance badges */}
           <div className="flex items-center gap-4">
-            {badges.map((badge) => (
-              <div
-                key={badge.label}
-                className="flex items-center gap-1.5 text-xs text-muted-foreground"
-              >
-                <badge.icon className="h-4 w-4" />
-                <span>{badge.label}</span>
-              </div>
-            ))}
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+              ✓ HIPAA Compliant
+            </div>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+              ✓ BAA Ready
+            </div>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+              ✓ SOC 2 In Progress
+            </div>
           </div>
         </div>
       </div>

@@ -1,20 +1,43 @@
-import Link from "next/link"
+'use client'
+
+import Link from 'next/link'
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-24 bg-gradient-to-r from-primary/20 via-primary/10 to-background">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
-          See what PrismIQ finds in your denials.
+    <section style={{
+      paddingTop: '128px',
+      paddingBottom: '128px',
+      background: 'var(--background)',
+      position: 'relative'
+    }} className="px-4 overflow-hidden">
+      {/* Subtle diagonal gradient */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'linear-gradient(to right, rgba(0, 245, 160, 0.06), transparent)',
+        zIndex: 0
+      }} />
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+        <h2 style={{ fontSize: '40px', fontWeight: 'bold', color: 'var(--text-primary)' }} className="text-white">
+          We&apos;re here to make sure practices get every dollar back.
         </h2>
-        <p className="text-lg text-muted-foreground mb-10">
-          Share a sample of denied claims. We&apos;ll return a ready-to-send appeal within 48 hours.
+        <p style={{ fontSize: '18px', color: 'var(--text-muted)' }}>
+          Share a sample of denied claims. We&apos;ll return a policy-cited appeal for your hardest denial within 48 hours.
         </p>
         <Link
           href="/pilot"
-          className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-background transition-colors hover:bg-primary/90"
+          className="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+          style={{
+            backgroundColor: 'var(--accent-teal)',
+            color: 'var(--background)'
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)'
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+          }}
         >
-          Request a Pilot
+          Request a Pilot →
         </Link>
       </div>
     </section>
