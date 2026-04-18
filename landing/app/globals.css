@@ -2,93 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+* {
+  background-color: inherit;
 }
 
 @layer base {
-  :root {
-    --background: 210 33% 98%;
-    --foreground: 210 40% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 210 40% 8%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 8%;
-    --primary: 199 89% 38%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 195 20% 94%;
-    --secondary-foreground: 210 40% 12%;
-    --muted: 200 18% 94%;
-    --muted-foreground: 210 15% 46%;
-    --accent: 174 62% 42%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 200 20% 90%;
-    --input: 200 20% 90%;
-    --ring: 199 89% 38%;
-    --chart-1: 199 89% 38%;
-    --chart-2: 174 62% 42%;
-    --chart-3: 210 40% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.625rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 199 89% 38%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 195 20% 94%;
-    --sidebar-accent-foreground: 210 40% 12%;
-    --sidebar-border: 200 20% 90%;
-    --sidebar-ring: 199 89% 38%;
+  html {
+    background-color: #070D1A !important;
+    color: #D1D5DB !important;
   }
-  .dark {
-    --background: 210 40% 6%;
-    --foreground: 210 20% 96%;
-    --card: 210 35% 9%;
-    --card-foreground: 210 20% 96%;
-    --popover: 210 35% 9%;
-    --popover-foreground: 210 20% 96%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 30% 14%;
-    --secondary-foreground: 210 20% 96%;
-    --muted: 210 25% 14%;
-    --muted-foreground: 210 15% 58%;
-    --accent: 174 62% 48%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 25% 16%;
-    --input: 210 25% 16%;
-    --ring: 199 89% 48%;
-    --chart-1: 199 89% 48%;
-    --chart-2: 174 62% 48%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 210 40% 6%;
-    --sidebar-foreground: 210 20% 96%;
-    --sidebar-primary: 199 89% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 30% 14%;
-    --sidebar-accent-foreground: 210 20% 96%;
-    --sidebar-border: 210 25% 16%;
-    --sidebar-ring: 199 89% 48%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
+  
   body {
-    @apply bg-background text-foreground;
+    background-color: #070D1A !important;
+    color: #D1D5DB !important;
+    font-family: system-ui, -apple-system, sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF !important;
+  }
+
+  p, span, div, a {
+    color: inherit;
+  }
+
+  a {
+    color: #00F5A0;
+  }
+
+  button {
+    color: inherit;
+  }
+}
+
+/* Input focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #00F5A0 !important;
+  box-shadow: 0 0 0 3px rgba(0, 245, 160, 0.1) !important;
+}
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.4s ease-out forwards;
 }

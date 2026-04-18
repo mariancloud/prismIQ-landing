@@ -1,63 +1,87 @@
-import { Search, ShieldAlert, Scale } from "lucide-react"
+'use client'
 
 const features = [
   {
-    icon: Search,
-    title: "Instant Policy Lookup",
-    description:
-      "Search any payer's requirements in real-time. Get the exact coverage criteria, documentation requirements, and authorization rules you need — all in one place.",
-    accent: "bg-primary/10 text-primary",
+    title: "Claim IQ™",
+    subtitle: "Your remittance, translated.",
+    description: "Drop in your 835 file. Claim IQ reads every line — what the payer paid, what they cut, and why — in plain English. Then it tells you which denials are worth fighting and writes the appeal argument, already citing the payer's own policy language.",
+    tags: ["All major clearinghouse formats", "Anthem, UHC, Aetna"],
+    highlighted: true,
   },
   {
-    icon: ShieldAlert,
-    title: "Denial Intelligence",
-    description:
-      "Understand why claims were denied and what to do next. Our system analyzes denial patterns and surfaces actionable insights to maximize your recovery rate.",
-    accent: "bg-accent/10 text-accent",
-  },
-  {
-    icon: Scale,
-    title: "Precedent Tracking",
-    description:
-      "Learn from past appeals and decisions. Build a living knowledge base of precedents that helps your team write stronger appeals backed by historical outcomes.",
-    accent: "bg-primary/10 text-primary",
+    title: "Risk Check",
+    subtitle: "Know before you submit.",
+    description: "Before a high-value claim goes out, run it through Risk Check. Enter the payer, CPT code, and documentation on hand. You'll get a denial probability score and a documentation readiness checklist — so the claim goes out clean the first time.",
+    tags: ["Pre-submission · Post-denial", "CPT and payer-specific"],
+    highlighted: false,
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-20 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-            Features
-          </p>
-          <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Everything your billing team needs
+    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+          <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
+            THE PLATFORM
+          </div>
+          <h2 style={{ fontSize: '40px', fontWeight: '600', color: '#FFFFFF' }} className="text-white">
+            From remittance to appeal. From submission to certainty.
           </h2>
-          <p className="mt-4 text-pretty text-muted-foreground leading-relaxed">
-            PrismIQ centralizes payer intelligence so your team spends less time
-            searching and more time getting claims paid.
+          <p style={{ fontSize: '18px', color: '#6B7280' }}>
+            Purpose-built for specialty billing teams managing complex, high-value claims.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {features.map((feature) => (
+        {/* Two column layout */}
+        <div className="grid md:grid-cols-[1.4fr_1fr] gap-8">
+          {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="group relative rounded-xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              style={{
+                background: '#0E1626',
+                border: feature.highlighted ? '3px solid #00F5A0' : '1px solid #1A2438',
+                borderLeft: feature.highlighted ? '3px solid #00F5A0' : '1px solid #1A2438',
+                borderRight: 'none',
+                borderTop: 'none',
+                borderBottom: 'none',
+                borderRadius: '12px',
+                padding: '48px',
+                position: 'relative',
+                order: feature.highlighted ? -1 : 0
+              }}
+              className="transition-all duration-300"
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 32px rgba(0, 245, 160, 0.08)'
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+              }}
             >
-              <div
-                className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg ${feature.accent}`}
-              >
-                <feature.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mb-3 font-display text-xl font-semibold text-foreground">
+              <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: '#FFFFFF' }} className="text-white mb-2">
                 {feature.title}
               </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <p style={{ fontSize: '16px', color: '#00F5A0', fontWeight: 'normal' }} className="mb-4">
+                {feature.subtitle}
+              </p>
+              <p style={{ fontSize: '17px', color: '#D1D5DB', lineHeight: '1.7' }} className="mb-6">
                 {feature.description}
               </p>
+              <div className="flex flex-wrap gap-2">
+                {feature.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex px-3 py-1 rounded-full text-xs font-medium"
+                    style={{
+                      background: '#1A2438',
+                      color: '#6B7280'
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

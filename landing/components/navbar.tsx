@@ -1,93 +1,110 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import Link from 'next/link'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+
+function PrismLogo() {
+  return (
+    <img 
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
+      alt="PrismIQ Logo"
+      className="w-12 h-12 object-contain"
+      style={{ width: '48px', height: '48px' }}
+    />
+  )
+}
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M3 3L9 1L15 3L17 9L15 15L9 17L3 15L1 9L3 3Z"
-                stroke="white"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <path
-                d="M9 5L13 9L9 13L5 9L9 5Z"
-                fill="white"
-                opacity="0.7"
-              />
-            </svg>
+    <nav className="fixed top-0 w-full z-50 h-16" style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #1A2438' }}>
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        {/* Logo Block: Logo + Wordmark + Tagline */}
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <PrismLogo />
+          <div className="flex flex-col gap-0">
+            <span className="text-white font-bold text-lg leading-tight">PrismIQ</span>
+            <span className="text-xs italic" style={{ color: '#6B7280', letterSpacing: '0.02em' }}>Revenue belongs to the physicians who earned it.</span>
           </div>
-          <span className="text-lg font-bold font-display tracking-tight text-foreground">
-            PrismIQ
-          </span>
-        </a>
+        </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          <a
-            href="#features"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Features
-          </a>
-          <a
-            href="#contact"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Contact
-          </a>
-          <Button size="sm">Request Access</Button>
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
+            Home
+          </Link>
+          <Link href="/product" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
+            Product
+          </Link>
+          <Link href="/security" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
+            Security
+          </Link>
+          <Link href="/about" className="text-sm font-semibold hover:text-accent-teal transition-colors" style={{ color: '#D1D5DB' }}>
+            About
+          </Link>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
-      </nav>
+        {/* Desktop CTA Button */}
+        <div className="hidden md:block">
+          <Link 
+            href="/pilot" 
+            className="px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-200 inline-block"
+            style={{
+              backgroundColor: '#00F5A0',
+              color: '#070D1A'
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)'
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+            }}
+          >
+            Request a Pilot →
+          </Link>
+        </div>
 
-      {/* Mobile nav */}
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden p-2 transition-colors"
+          onClick={() => setMobileOpen(!mobileOpen)}
+            style={{ color: '#6B7280' }}
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="border-t border-border bg-background px-6 pb-6 pt-4 md:hidden">
-          <div className="flex flex-col gap-4">
-            <a
-              href="#features"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileOpen(false)}
-            >
-              Features
-            </a>
-            <a
-              href="#contact"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact
-            </a>
-            <Button size="sm" className="w-full">
-              Request Access
-            </Button>
-          </div>
+        <div 
+          className="md:hidden fixed inset-0 top-16 z-40 flex flex-col items-center justify-start pt-8 gap-6 px-4"
+          style={{ background: 'rgba(7, 13, 26, 0.95)', backdropFilter: 'blur(8px)' }}
+        >
+            <Link href="/" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+            Home
+          </Link>
+          <Link href="/product" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+            Product
+          </Link>
+          <Link href="/security" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+            Security
+          </Link>
+          <Link href="/about" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
+            About
+          </Link>
+          <Link 
+            href="/pilot" 
+            className="px-6 py-2 rounded-lg font-semibold text-sm transition-all mt-4 inline-block"
+            style={{ backgroundColor: '#00F5A0', color: '#070D1A' }}
+            onClick={() => setMobileOpen(false)}
+          >
+            Request a Pilot
+          </Link>
         </div>
       )}
-    </header>
+    </nav>
   )
 }
+
