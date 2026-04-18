@@ -68,13 +68,13 @@ export default function ProductPage() {
       </section>
 
       {/* Section 2: Claim IQ */}
-      <section id="claim-iq" style={{ paddingTop: '80px', paddingBottom: '80px', background: '#0E1626', borderTop: '1px solid #1A2438' }} className="px-4">
+      <section id="claim-iq" style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A', borderTop: '1px solid #1A2438' }} className="px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Steps List */}
           <div className="space-y-8">
             <div>
-              <div className="text-xs font-medium tracking-widest uppercase mb-6" style={{ color: '#00F5A0' }}>
-                CLAIM IQ
+              <div className="text-xs font-medium tracking-widest uppercase mb-6" style={{ color: '#00F5A0', fontVariant: 'small-caps', letterSpacing: '0.1em' }}>
+                CLAIM IQ™ — FROM 835 TO APPEAL READY
               </div>
               <h2 style={{ fontSize: '36px', fontWeight: '600', color: '#FFFFFF', lineHeight: '1.2' }}>
                 Your remittance, translated.
@@ -86,22 +86,22 @@ export default function ProductPage() {
               {
                 number: '01',
                 title: 'Upload or Connect',
-                description: 'Drop in your 835 file or connect your clearinghouse feed directly. All major formats supported.'
+                description: 'Drop in your 835 ERA file or connect your clearinghouse feed directly — Availity, Change Healthcare, Office Ally, and more. No new software. No IT project. You\'re live in minutes.'
               },
               {
                 number: '02',
-                title: 'Claim IQ Translates',
-                description: 'Every CARC code becomes plain English. We flag what\'s worth fighting and estimate recovery value.'
+                title: 'Every denial, decoded',
+                description: 'Claim IQ reads every CARC and RARC code on your remittance and converts them into plain English — what the payer did, why they did it, and what it means for your revenue. No more guessing what CO-50 actually means at 4pm on a Friday.'
               },
               {
                 number: '03',
-                title: 'Policy Alignment',
-                description: 'Cross-reference your denial against live payer policy documents using RAG-powered AI.'
+                title: 'Fight or fold — we tell you which',
+                description: 'Not every denial is worth fighting. Claim IQ scores each one by appeal confidence and estimated recovery value — so your billing team spends time on the claims that will actually pay off, not the ones that won\'t.'
               },
               {
                 number: '04',
-                title: 'Appeal Ready',
-                description: 'Get the exact policy clause the payer used — and a counter-argument built from their own language.'
+                title: 'Appeal letter, ready to send',
+                description: 'For every appealable denial, Claim IQ generates a fully constructed appeal letter — citing the payer\'s own policy language, the specific procedure\'s clinical criteria, and the medical necessity documentation required. Not a template with blanks. A built argument.'
               }
             ].map((step, idx) => (
               <div key={idx} style={{
@@ -142,19 +142,39 @@ export default function ProductPage() {
       </section>
 
       {/* Section 3: Risk Check */}
-      <section id="risk-check" style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
+      <section id="risk-check" style={{ paddingTop: '80px', paddingBottom: '80px', background: '#0E1626' }} className="px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Copy */}
           <div className="space-y-6">
-            <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0' }}>
-              RISK CHECK
+            <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', fontVariant: 'small-caps', letterSpacing: '0.1em' }}>
+              RISK CHECK — BEFORE YOU HIT SUBMIT
             </div>
             <h2 style={{ fontSize: '36px', fontWeight: '600', color: '#FFFFFF', lineHeight: '1.2' }}>
-              Stop the denial before it starts
+              Stop the denial before it starts.
             </h2>
             <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: '1.6' }}>
-              Before a high-value claim goes out, run it through Risk Check. Get a denial probability score and a documentation readiness checklist — so the claim goes out clean the first time.
+              Risk Check runs before you submit. Enter the payer, CPT code, ICD-10, and documentation you have on hand. PrismIQ returns a denial risk score, the top reasons this specific payer flags this specific procedure, and a documentation readiness checklist with severity ratings. A $24,000 Total Knee Arthroplasty to UnitedHealthcare gets a different analysis than a Cervical Fusion to Anthem. The payer policies are different. The documentation requirements are different. Risk Check knows the difference.
             </p>
+            
+            <div className="space-y-3 pt-4">
+              <div style={{ fontSize: '16px', color: '#D1D5DB', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                <span style={{ color: '#00F5A0', minWidth: '20px' }}>→</span>
+                <span>Denial probability score — payer and CPT specific</span>
+              </div>
+              <div style={{ fontSize: '16px', color: '#D1D5DB', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                <span style={{ color: '#00F5A0', minWidth: '20px' }}>→</span>
+                <span>Documentation readiness checklist — exactly what's missing</span>
+              </div>
+              <div style={{ fontSize: '16px', color: '#D1D5DB', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                <span style={{ color: '#00F5A0', minWidth: '20px' }}>→</span>
+                <span>Recommended actions — get the claim clean before it goes out</span>
+              </div>
+            </div>
+
+            <p style={{ fontSize: '16px', color: '#D1D5DB', fontStyle: 'italic', paddingTop: '8px' }}>
+              A clean claim submitted once is worth more than a perfect appeal submitted twice.
+            </p>
+            
             <Link
               href="/pilot"
               className="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
