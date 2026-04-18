@@ -5,8 +5,8 @@ function PrismLogo() {
     <img 
       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
       alt="PrismIQ Logo"
-      className="w-12 h-12 object-contain"
-      style={{ width: '48px', height: '48px' }}
+      className="object-contain"
+      style={{ width: '44px', height: '44px', minWidth: '44px', display: 'block' }}
     />
   )
 }
@@ -38,7 +38,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity mb-6">
               <PrismLogo />
-              <span className="text-white font-semibold text-base hidden sm:inline">PrismIQ</span>
+              <span className="text-white font-bold text-lg hidden sm:inline" style={{ fontSize: '18px', fontWeight: 'bold' }}>PrismIQ</span>
             </Link>
           </div>
 

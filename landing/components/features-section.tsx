@@ -19,14 +19,14 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
+    <section style={{ paddingTop: '64px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4 max-w-2xl mx-auto">
           <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
             THE PLATFORM
           </div>
-          <h2 style={{ fontSize: '40px', fontWeight: '600', color: '#FFFFFF' }} className="text-white">
+          <h2 style={{ fontSize: '40px', fontWeight: '600', color: '#FFFFFF', maxWidth: '540px', marginLeft: 'auto', marginRight: 'auto' }} className="text-white">
             From remittance to appeal. From submission to certainty.
           </h2>
           <p style={{ fontSize: '18px', color: '#6B7280' }}>
@@ -47,7 +47,7 @@ export function FeaturesSection() {
                 borderTop: 'none',
                 borderBottom: 'none',
                 borderRadius: '12px',
-                padding: '48px',
+                padding: '40px',
                 position: 'relative',
                 order: feature.highlighted ? -1 : 0
               }}
