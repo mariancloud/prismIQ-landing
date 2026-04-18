@@ -21,22 +21,23 @@ export default function ProductPage() {
             </p>
           </div>
 
-          {/* Right: Placeholder Screenshot Card */}
+          {/* Right: 835 Claim Flow Screenshot */}
           <div style={{
             background: '#0E1626',
             border: '1px solid #1A2438',
             borderRadius: '16px',
-            padding: '24px',
+            padding: '0',
             minHeight: '400px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            textAlign: 'center'
+            overflow: 'hidden'
           }}>
-            <div>
-              <div style={{ fontSize: '14px', color: '#6B7280' }}>835 Claim Flow Screenshot</div>
-              <div style={{ fontSize: '48px', marginTop: '16px', color: '#1A2438' }}>📊</div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+              alt="835 Claim Flow Dashboard"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         </div>
       </section>
@@ -97,22 +98,23 @@ export default function ProductPage() {
             ))}
           </div>
 
-          {/* Right: Product Screenshot */}
+          {/* Right: Claim IQ Interface Screenshot */}
           <div style={{
             background: '#070D1A',
             border: '1px solid #1A2438',
             borderRadius: '16px',
-            padding: '24px',
+            padding: '0',
             minHeight: '500px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            textAlign: 'center'
+            overflow: 'hidden'
           }}>
-            <div>
-              <div style={{ fontSize: '14px', color: '#6B7280', marginBottom: '12px' }}>Claim IQ Interface</div>
-              <div style={{ fontSize: '48px', color: '#1A2438' }}>📋</div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop"
+              alt="Claim IQ Interface"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         </div>
       </section>
@@ -146,22 +148,23 @@ export default function ProductPage() {
             </Link>
           </div>
 
-          {/* Right: Risk Check Screenshot */}
+          {/* Right: Risk Check Dashboard Screenshot */}
           <div style={{
             background: '#0E1626',
             border: '1px solid #1A2438',
             borderRadius: '16px',
-            padding: '24px',
+            padding: '0',
             minHeight: '500px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            textAlign: 'center'
+            overflow: 'hidden'
           }}>
-            <div>
-              <div style={{ fontSize: '14px', color: '#6B7280', marginBottom: '12px' }}>Risk Check Dashboard</div>
-              <div style={{ fontSize: '48px', color: '#1A2438' }}>⚠️</div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=500&fit=crop"
+              alt="Risk Check Dashboard"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         </div>
       </section>

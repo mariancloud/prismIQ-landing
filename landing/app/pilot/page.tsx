@@ -2,48 +2,15 @@
 
 import { useState } from 'react'
 
-const specialties = [
-  "Orthopedics",
-  "Spine Surgery",
-  "Pain Management",
-  "Neurology",
-  "Other",
-]
-
-const denialVolumes = [
-  "Under 25",
-  "25–75",
-  "75–200",
-  "200+",
-]
-
-const payers = [
-  "UnitedHealthcare",
-  "Anthem Blue Cross",
-  "Aetna",
-  "Medicare",
-  "Other",
-]
-
 export default function PilotPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-  const [selectedPayers, setSelectedPayers] = useState<string[]>([])
-
-  const togglePayer = (payer: string) => {
-    setSelectedPayers(prev =>
-      prev.includes(payer)
-        ? prev.filter(p => p !== payer)
-        : [...prev, payer]
-    )
-  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSubmitting(true)
     const form = e.currentTarget
     const data = new FormData(form)
-    data.append("payers", selectedPayers.join(", "))
     
     await fetch("https://formspree.io/f/mwvwdlag", {
       method: "POST",
@@ -54,53 +21,48 @@ export default function PilotPage() {
     setSubmitting(false)
     setSubmitted(true)
     form.reset()
-    setSelectedPayers([])
   }
 
   return (
-    <div style={{ paddingTop: '80px', paddingBottom: '80px', background: 'var(--background)' }}>
+    <div style={{ paddingTop: '120px', paddingBottom: '120px', background: '#070D1A', minHeight: '100vh' }}>
       <div className="px-4">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12 space-y-4">
-            <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
-              REQUEST A PILOT
-            </div>
-            <h1 style={{ fontSize: '44px', fontWeight: 'bold', color: 'var(--text-primary)' }} className="text-white">
-              See what&apos;s recoverable in your denials.
+          <div className="text-center mb-16 space-y-6">
+            <h1 style={{ fontSize: '56px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1.1' }} className="text-white">
+              Request a Pilot
             </h1>
-            <p style={{ fontSize: '18px', color: 'var(--text-muted)', maxWidth: '520px', margin: '0 auto', lineHeight: '1.6' }}>
-              Share a sample of denied claims. We&apos;ll analyze them and return a policy-cited appeal for your hardest denial within 48 hours. No commitment required.
+            <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: '1.7' }}>
+              Share a sample of your denied claims. We&apos;ll show you exactly what was recoverable — and return a ready-to-send appeal for your hardest denial within 48 hours.
             </p>
           </div>
 
           {/* Form */}
           {submitted ? (
             <div style={{
-              background: 'var(--surface)',
-              border: '1px solid var(--border)',
-              borderRadius: '12px',
-              padding: '48px',
-              textAlign: 'center',
-              borderLeft: '3px solid var(--accent-teal)'
+              background: '#0E1626',
+              border: '1px solid #1A2438',
+              borderRadius: '16px',
+              padding: '64px 48px',
+              textAlign: 'center'
             }}>
-              <div style={{ fontSize: '48px', marginBottom: '16px' }}>✓</div>
-              <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--accent-teal)', marginBottom: '12px' }}>
-                Got it — we&apos;re on it.
+              <div style={{ fontSize: '56px', marginBottom: '24px' }}>✓</div>
+              <h2 style={{ fontSize: '28px', fontWeight: '700', color: '#00F5A0', marginBottom: '16px' }}>
+                We&apos;ve got your submission.
               </h2>
-              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              <p style={{ fontSize: '16px', color: '#D1D5DB', lineHeight: '1.7' }}>
                 We&apos;ll send you a secure upload link within one business day.
                 <br />
-                Look for an email from <span style={{ color: 'var(--text-primary)', fontWeight: '600' }}>hello@prismiqlabs.ai</span>
+                Look for an email from <span style={{ color: '#FFFFFF', fontWeight: '600' }}>hello@prismiqlabs.ai</span>
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name and Email row */}
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-medium uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-                    Name <span style={{ color: 'var(--accent-red)' }}>*</span>
+                  <label htmlFor="name" className="block text-sm font-semibold mb-3" style={{ color: '#FFFFFF' }}>
+                    Name <span style={{ color: '#F87171' }}>*</span>
                   </label>
                   <input
                     id="name"
@@ -109,21 +71,22 @@ export default function PilotPage() {
                     required
                     placeholder="Your name"
                     style={{
-                      background: 'var(--surface)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--border)',
-                      padding: '12px 16px',
-                      color: 'var(--text-primary)',
+                      background: '#0E1626',
+                      borderRadius: '12px',
+                      border: '1px solid #1A2438',
+                      padding: '16px 20px',
+                      color: '#D1D5DB',
                       width: '100%',
-                      fontSize: '14px'
+                      fontSize: '16px',
+                      fontFamily: 'inherit'
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--accent-teal)')}
-                    onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
+                    onFocus={(e) => (e.target.style.borderColor = '#00F5A0')}
+                    onBlur={(e) => (e.target.style.borderColor = '#1A2438')}
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-xs font-medium uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-                    Email <span style={{ color: 'var(--accent-red)' }}>*</span>
+                  <label htmlFor="email" className="block text-sm font-semibold mb-3" style={{ color: '#FFFFFF' }}>
+                    Email <span style={{ color: '#F87171' }}>*</span>
                   </label>
                   <input
                     id="email"
@@ -132,24 +95,25 @@ export default function PilotPage() {
                     required
                     placeholder="you@practice.com"
                     style={{
-                      background: 'var(--surface)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--border)',
-                      padding: '12px 16px',
-                      color: 'var(--text-primary)',
+                      background: '#0E1626',
+                      borderRadius: '12px',
+                      border: '1px solid #1A2438',
+                      padding: '16px 20px',
+                      color: '#D1D5DB',
                       width: '100%',
-                      fontSize: '14px'
+                      fontSize: '16px',
+                      fontFamily: 'inherit'
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = 'var(--accent-teal)')}
-                    onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
+                    onFocus={(e) => (e.target.style.borderColor = '#00F5A0')}
+                    onBlur={(e) => (e.target.style.borderColor = '#1A2438')}
                   />
                 </div>
               </div>
 
               {/* Practice Name */}
               <div>
-                <label htmlFor="practice" className="block text-xs font-medium uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-                  Practice Name <span style={{ color: 'var(--accent-red)' }}>*</span>
+                <label htmlFor="practice" className="block text-sm font-semibold mb-3" style={{ color: '#FFFFFF' }}>
+                  Practice Name <span style={{ color: '#F87171' }}>*</span>
                 </label>
                 <input
                   id="practice"
@@ -158,184 +122,95 @@ export default function PilotPage() {
                   required
                   placeholder="Orthopedic Specialists of Virginia"
                   style={{
-                    background: 'var(--surface)',
-                    borderRadius: '8px',
-                    border: '1px solid var(--border)',
-                    padding: '12px 16px',
-                    color: 'var(--text-primary)',
+                    background: '#0E1626',
+                    borderRadius: '12px',
+                    border: '1px solid #1A2438',
+                    padding: '16px 20px',
+                    color: '#D1D5DB',
                     width: '100%',
-                    fontSize: '14px'
+                    fontSize: '16px',
+                    fontFamily: 'inherit'
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = 'var(--accent-teal)')}
-                  onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
+                  onFocus={(e) => (e.target.style.borderColor = '#00F5A0')}
+                  onBlur={(e) => (e.target.style.borderColor = '#1A2438')}
                 />
               </div>
 
-              {/* Specialty and Volume row */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="specialty" className="block text-xs font-medium uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-                    Specialty <span style={{ color: 'var(--accent-red)' }}>*</span>
-                  </label>
-                  <select
-                    id="specialty"
-                    name="specialty"
-                    required
-                    style={{
-                      background: 'var(--surface)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--border)',
-                      padding: '12px 16px',
-                      color: 'var(--text-primary)',
-                      width: '100%',
-                      fontSize: '14px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <option value="">Select specialty</option>
-                    {specialties.map((specialty) => (
-                      <option key={specialty} value={specialty} style={{ background: 'var(--background)' }}>
-                        {specialty}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="volume" className="block text-xs font-medium uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-                    Monthly denial volume <span style={{ color: 'var(--accent-red)' }}>*</span>
-                  </label>
-                  <select
-                    id="volume"
-                    name="volume"
-                    required
-                    style={{
-                      background: 'var(--surface)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--border)',
-                      padding: '12px 16px',
-                      color: 'var(--text-primary)',
-                      width: '100%',
-                      fontSize: '14px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <option value="">Select volume</option>
-                    {denialVolumes.map((volume) => (
-                      <option key={volume} value={volume} style={{ background: 'var(--background)' }}>
-                        {volume}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Payer challenges */}
+              {/* Dental Volume Textarea */}
               <div>
-                <label className="block text-xs font-medium uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
-                  Primary payer challenges <span style={{ color: 'var(--accent-red)' }}>*</span>
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {payers.map((payer) => (
-                    <button
-                      key={payer}
-                      type="button"
-                      onClick={() => togglePayer(payer)}
-                      style={{
-                        padding: '8px 16px',
-                        borderRadius: '8px',
-                        fontSize: '14px',
-                        fontWeight: '500',
-                        border: '1px solid ' + (selectedPayers.includes(payer) ? 'var(--accent-teal)' : 'var(--border)'),
-                        background: selectedPayers.includes(payer) ? 'var(--accent-teal)' : 'var(--surface)',
-                        color: selectedPayers.includes(payer) ? 'var(--background)' : 'var(--text-secondary)',
-                        cursor: 'pointer',
-                        transition: 'all 200ms ease'
-                      }}
-                    >
-                      {payer}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Additional info */}
-              <div>
-                <label htmlFor="message" className="block text-xs font-medium uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-                  Anything else you&apos;d like us to know
+                <label htmlFor="volume" className="block text-sm font-semibold mb-3" style={{ color: '#FFFFFF' }}>
+                  Tell us about your dental volume <span style={{ color: '#F87171' }}>*</span>
                 </label>
                 <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  placeholder="Tell us about your biggest denial challenges..."
+                  id="volume"
+                  name="volume"
+                  required
+                  rows={6}
+                  placeholder="How many denials do you handle per month? Which payers are most problematic?"
                   style={{
-                    background: 'var(--surface)',
-                    borderRadius: '8px',
-                    border: '1px solid var(--border)',
-                    padding: '12px 16px',
-                    color: 'var(--text-primary)',
+                    background: '#0E1626',
+                    borderRadius: '12px',
+                    border: '1px solid #1A2438',
+                    padding: '16px 20px',
+                    color: '#D1D5DB',
                     width: '100%',
-                    fontSize: '14px',
+                    fontSize: '16px',
                     fontFamily: 'inherit',
                     resize: 'none'
                   }}
-                  onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent-teal)')}
-                  onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
+                  onFocus={(e) => (e.target.style.borderColor = '#00F5A0')}
+                  onBlur={(e) => (e.target.style.borderColor = '#1A2438')}
                 />
               </div>
 
-              {/* Trust badges */}
-              <div className="flex flex-wrap items-center justify-center gap-6 py-4 text-xs" style={{ color: 'var(--text-muted)' }}>
+              {/* Trust Badges */}
+              <div className="flex items-center justify-center gap-8 py-8 text-xs font-medium" style={{ color: '#6B7280' }}>
                 <div className="flex items-center gap-2">
-                  <span>✓</span>
+                  <span style={{ color: '#00F5A0' }}>✓</span>
                   <span>SOC 2</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>✓</span>
+                  <span style={{ color: '#00F5A0' }}>✓</span>
                   <span>HIPAA</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>✓</span>
+                  <span style={{ color: '#00F5A0' }}>✓</span>
                   <span>BAA Ready</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span>✓</span>
-                  <span>No commitment</span>
                 </div>
               </div>
 
               {/* Tagline */}
-              <p style={{ fontSize: '14px', color: 'var(--text-muted)', textAlign: 'center', fontStyle: 'italic', marginBottom: '24px' }}>
+              <p style={{ fontSize: '14px', color: '#6B7280', textAlign: 'center', fontStyle: 'italic', marginBottom: '32px' }}>
                 Every denial is a story. PrismIQ writes the rebuttal.
               </p>
 
-              {/* Submit */}
+              {/* Submit Button */}
               <button
                 type="submit"
-                disabled={submitting || selectedPayers.length === 0}
+                disabled={submitting}
                 style={{
                   width: '100%',
-                  backgroundColor: selectedPayers.length === 0 ? 'var(--border)' : 'var(--accent-teal)',
-                  color: selectedPayers.length === 0 ? 'var(--text-muted)' : 'var(--background)',
-                  borderRadius: '8px',
-                  padding: '16px',
-                  fontSize: '16px',
-                  fontWeight: '600',
+                  backgroundColor: '#00F5A0',
+                  color: '#070D1A',
+                  borderRadius: '12px',
+                  padding: '20px',
+                  fontSize: '18px',
+                  fontWeight: '700',
                   border: 'none',
-                  cursor: selectedPayers.length === 0 ? 'not-allowed' : 'pointer',
-                  opacity: selectedPayers.length === 0 ? 0.6 : 1,
-                  transition: 'all 200ms ease'
+                  cursor: submitting ? 'not-allowed' : 'pointer',
+                  transition: 'all 200ms ease',
+                  opacity: submitting ? 0.7 : 1
                 }}
                 onMouseEnter={(e) => {
-                  if (selectedPayers.length > 0) {
-                    (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)'
+                  if (!submitting) {
+                    (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 32px rgba(0, 245, 160, 0.25)'
                   }
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.boxShadow = 'none'
                 }}
               >
-                {submitting ? 'Sending...' : 'Request a Pilot →'}
+                {submitting ? 'Sending...' : 'Request a Pilot'}
               </button>
             </form>
           )}
