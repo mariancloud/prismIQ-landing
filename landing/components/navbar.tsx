@@ -9,8 +9,8 @@ function PrismLogo() {
     <img 
       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
       alt="PrismIQ Logo"
-      className="w-12 h-12 object-contain"
-      style={{ width: '48px', height: '48px' }}
+      className="object-contain"
+      style={{ width: '44px', height: '44px', minWidth: '44px', display: 'block' }}
     />
   )
 }
@@ -19,14 +19,15 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full z-50 h-16" style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #1A2438' }}>
+    <nav className="fixed top-0 w-full z-50 h-16" style={{ background: '#070D1A', borderBottom: '1px solid #1A2438' }}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo Block: Logo + Wordmark + Tagline */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <PrismLogo />
-          <div className="flex flex-col gap-0">
-            <span className="text-white font-bold text-lg leading-tight">PrismIQ</span>
-            <span className="text-xs italic" style={{ color: '#6B7280', letterSpacing: '0.02em' }}>Revenue belongs to the physicians who earned it.</span>
+          <div className="flex items-center gap-3">
+            <span className="text-white font-bold leading-tight" style={{ fontSize: '20px', fontWeight: '700' }}>PrismIQ</span>
+            <span style={{ color: '#1A2438', margin: '0 8px' }}>|</span>
+            <span className="italic" style={{ fontSize: '12px', color: '#9CA3AF', whiteSpace: 'nowrap', lineHeight: '1.2' }}>Revenue belongs to the physicians who earned it.</span>
           </div>
         </Link>
 
