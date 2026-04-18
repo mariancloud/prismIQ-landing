@@ -10,9 +10,9 @@ export function TestimonialSection() {
         </div>
 
         {/* Large quotation mark */}
-        <div style={{ fontSize: '96px', lineHeight: '0.7', color: '#00F5A0', fontWeight: '800', display: 'block', textAlign: 'center', fontFamily: 'Inter' }}>
-          &ldquo;
-        </div>
+        <span style={{ fontSize: '120px', lineHeight: '0.8', color: '#00F5A0', fontWeight: '400', display: 'block', textAlign: 'center', marginBottom: '24px', fontFamily: 'Georgia, "Times New Roman", serif' }}>
+          "
+        </span>
 
         {/* Quote */}
         <blockquote style={{ fontSize: '24px', fontWeight: '500', color: '#FFFFFF', lineHeight: '1.6', fontStyle: 'italic' }} className="text-white">
