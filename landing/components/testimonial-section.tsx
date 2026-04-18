@@ -10,13 +10,13 @@ export function TestimonialSection() {
         </div>
 
         {/* Large quotation mark */}
-        <div style={{ fontSize: '120px', lineHeight: '0.8', color: '#00F5A0', fontWeight: '700', display: 'block', textAlign: 'center' }}>
-          "
+        <div style={{ fontSize: '96px', lineHeight: '0.7', color: '#00F5A0', fontWeight: '800', display: 'block', textAlign: 'center', fontFamily: 'Inter' }}>
+          &ldquo;
         </div>
 
         {/* Quote */}
         <blockquote style={{ fontSize: '24px', fontWeight: '500', color: '#FFFFFF', lineHeight: '1.6', fontStyle: 'italic' }} className="text-white">
-          Denial management has always been a black box for most specialty practices — time-consuming, inconsistent, and expensive to outsource. PrismIQ brings transparency and speed to a process that desperately needed both. I&apos;ve seen firsthand how much revenue slips through the cracks in complex billing. This platform closes that gap.
+          I work inside a hospital system where I see the full picture of how care gets reimbursed, and how often it doesn&apos;t. The complexity payers have built into the denial process is real, and most practices simply don&apos;t have the tools to match it. PrismIQ changes that equation. The intelligence it brings to appeal generation and pre-submission risk is exactly the kind of systematic thinking this problem has always needed.
         </blockquote>
 
         {/* Attribution */}
@@ -28,7 +28,7 @@ export function TestimonialSection() {
             background: '#1A2438',
             color: '#00F5A0'
           }}>
-            Physician Advisor, PrismIQ · Specialty Practice Physician
+            Physician, Hospital Medicine · Physician Advisor, PrismIQ
           </div>
         </div>
       </div>
