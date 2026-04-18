@@ -15,7 +15,7 @@ export function TestimonialSection() {
         </span>
 
         {/* Quote */}
-        <blockquote style={{ fontSize: '24px', fontWeight: '500', color: '#FFFFFF', lineHeight: '1.6', fontStyle: 'italic' }} className="text-white">
+        <blockquote style={{ fontSize: '24px', fontWeight: '500', color: '#FFFFFF', lineHeight: '1.6', fontStyle: 'italic', fontFamily: 'Georgia, "Times New Roman", serif', textAlign: 'center' }} className="text-white">
           I work inside a hospital system where I see the full picture of how care gets reimbursed, and how often it doesn&apos;t. The complexity payers have built into the denial process is real, and most practices simply don&apos;t have the tools to match it. PrismIQ changes that equation. The intelligence it brings to appeal generation and pre-submission risk is exactly the kind of systematic thinking this problem has always needed.
         </blockquote>
 
