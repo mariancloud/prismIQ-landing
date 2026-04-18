@@ -76,11 +76,3 @@ input:focus, textarea:focus, select:focus {
 .animate-fade-up {
   animation: fade-up 0.4s ease-out forwards;
 }
-
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
