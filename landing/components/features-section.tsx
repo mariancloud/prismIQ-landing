@@ -19,17 +19,17 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: 'var(--background)' }} className="px-4">
+    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4 max-w-2xl mx-auto">
           <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
             THE PLATFORM
           </div>
-          <h2 style={{ fontSize: '40px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
+          <h2 style={{ fontSize: '40px', fontWeight: '600', color: '#FFFFFF' }} className="text-white">
             From remittance to appeal. From submission to certainty.
           </h2>
-          <p style={{ fontSize: '18px', color: 'var(--text-muted)' }}>
+          <p style={{ fontSize: '18px', color: '#6B7280' }}>
             Purpose-built for specialty billing teams managing complex, high-value claims.
           </p>
         </div>
@@ -40,8 +40,8 @@ export function FeaturesSection() {
             <div
               key={feature.title}
               style={{
-                background: 'var(--surface)',
-                border: feature.highlighted ? '3px solid var(--accent-teal)' : '1px solid var(--border)',
+                background: '#0E1626',
+                border: feature.highlighted ? '3px solid #00F5A0' : '1px solid #1A2438',
                 borderRadius: '12px',
                 padding: '48px',
                 position: 'relative',
@@ -58,10 +58,10 @@ export function FeaturesSection() {
               <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--text-primary)' }} className="text-white mb-2">
                 {feature.title}
               </h3>
-              <p style={{ fontSize: '16px', color: 'var(--accent-teal)', fontWeight: 'normal' }} className="mb-4">
+              <p style={{ fontSize: '16px', color: '#00F5A0', fontWeight: 'normal' }} className="mb-4">
                 {feature.subtitle}
               </p>
-              <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }} className="mb-6">
+              <p style={{ fontSize: '17px', color: '#D1D5DB', lineHeight: '1.7' }} className="mb-6">
                 {feature.description}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -70,8 +70,8 @@ export function FeaturesSection() {
                     key={tag}
                     className="inline-flex px-3 py-1 rounded-full text-xs font-medium"
                     style={{
-                      background: 'var(--border)',
-                      color: 'var(--text-muted)'
+                      background: '#1A2438',
+                      color: '#6B7280'
                     }}
                   >
                     {tag}

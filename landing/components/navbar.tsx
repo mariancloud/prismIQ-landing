@@ -24,7 +24,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full z-50 h-16" style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid var(--border)' }}>
+          style={{ background: 'rgba(7, 13, 26, 0.8)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #1A2438' }}
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-h-11">
@@ -54,8 +54,8 @@ export function Navbar() {
             href="/pilot" 
             className="px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-200 inline-block"
             style={{
-              backgroundColor: 'var(--accent-teal)',
-              color: 'var(--background)'
+              backgroundColor: '#00F5A0',
+              color: '#070D1A'
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)'
@@ -72,7 +72,7 @@ export function Navbar() {
         <button 
           className="md:hidden p-2 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
-          style={{ color: 'var(--text-muted)' }}
+            style={{ color: '#6B7280' }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -84,16 +84,16 @@ export function Navbar() {
           className="md:hidden fixed inset-0 top-16 z-40 flex flex-col items-center justify-start pt-8 gap-6 px-4"
           style={{ background: 'rgba(7, 13, 26, 0.95)', backdropFilter: 'blur(8px)' }}
         >
-          <Link href="/" className="text-base font-medium transition-colors" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/" className="text-base font-medium transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Home
           </Link>
-          <Link href="/product" className="text-base font-medium transition-colors" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/product" className="text-base font-medium transition-colors"             style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Product
           </Link>
-          <Link href="/security" className="text-base font-medium transition-colors" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/security" className="text-base font-medium transition-colors"             style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Security
           </Link>
-          <Link href="/about" className="text-base font-medium transition-colors" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileOpen(false)}>
+          <Link href="/about" className="text-base font-medium transition-colors"             style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             About
           </Link>
           <Link 

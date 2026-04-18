@@ -20,14 +20,14 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: 'var(--background)' }} className="px-4">
+    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <div className="text-xs font-medium tracking-widest uppercase" style={{ color: 'var(--accent-teal)' }}>
+          <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0' }}>
             HOW IT WORKS
           </div>
-          <h2 style={{ fontSize: '36px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
+          <h2 style={{ fontSize: '36px', fontWeight: '600', color: '#FFFFFF' }} className="text-white">
             From denied claim to appeal letter in three steps.
           </h2>
         </div>
@@ -38,8 +38,8 @@ export function HowItWorksSection() {
             <div
               key={step.number}
               style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
+                background: '#0E1626',
+                border: '1px solid #1A2438',
                 borderRadius: '12px',
                 padding: '40px',
                 position: 'relative'
@@ -59,7 +59,7 @@ export function HowItWorksSection() {
                 right: 0,
                 fontSize: '120px',
                 fontWeight: 'bold',
-                color: 'var(--border)',
+                color: '#1A2438',
                 opacity: 0.5,
                 lineHeight: '1',
                 overflow: 'hidden'
@@ -69,13 +69,13 @@ export function HowItWorksSection() {
 
               {/* Content */}
               <div className="relative z-10 space-y-4">
-                <div style={{ fontSize: '48px', fontWeight: 'bold', color: 'var(--accent-teal)' }}>
+                <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#00F5A0' }}>
                   {step.number}
                 </div>
                 <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text-primary)' }} className="text-white">
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+                <p style={{ fontSize: '17px', color: '#D1D5DB', lineHeight: '1.7' }}>
                   {step.description}
                 </p>
               </div>

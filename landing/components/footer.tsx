@@ -35,7 +35,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
+    <footer style={{ background: '#070D1A', borderTop: '1px solid #1A2438' }}>
       <div className="max-w-7xl mx-auto px-4 py-12 lg:py-16">
         {/* Top section with logo and links */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -49,14 +49,14 @@ export function Footer() {
 
           {/* Product links */}
           <div>
-            <h3 className="text-sm font-semibold text-text-primary mb-4" style={{ color: 'var(--text-primary)' }}>Product</h3>
+            <h3 className="text-sm font-semibold text-text-primary mb-4"             style={{ color: '#FFFFFF' }}>Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm transition-colors hover:text-accent-teal"
-                    style={{ color: 'var(--text-muted)' }}
+                    style={{ color: '#6B7280' }}
                   >
                     {link.label}
                   </Link>
@@ -67,14 +67,14 @@ export function Footer() {
 
           {/* Company links */}
           <div>
-            <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Company</h3>
+            <h3 className="text-sm font-semibold mb-4"             style={{ color: '#FFFFFF' }}>Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm transition-colors hover:text-accent-teal"
-                    style={{ color: 'var(--text-muted)' }}
+                    style={{ color: '#6B7280' }}
                   >
                     {link.label}
                   </Link>
@@ -85,14 +85,14 @@ export function Footer() {
 
           {/* Legal links */}
           <div>
-            <h3 className="text-sm font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Legal</h3>
+            <h3 className="text-sm font-semibold mb-4"             style={{ color: '#FFFFFF' }}>Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm transition-colors hover:text-accent-teal"
-                    style={{ color: 'var(--text-muted)' }}
+                    style={{ color: '#6B7280' }}
                   >
                     {link.label}
                   </Link>
@@ -103,7 +103,7 @@ export function Footer() {
         </div>
 
         {/* Bottom divider */}
-        <div style={{ borderTop: '1px solid var(--border)', paddingTop: '24px' }} className="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div style={{ borderTop: '1px solid #1A2438', paddingTop: '24px' }} className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
             © 2025 PrismIQ Labs, Inc.
@@ -111,13 +111,13 @@ export function Footer() {
 
           {/* Compliance badges */}
           <div className="flex items-center gap-4">
-            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
               ✓ HIPAA Compliant
             </div>
-            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
               ✓ BAA Ready
             </div>
-            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
               ✓ SOC 2 In Progress
             </div>
           </div>
