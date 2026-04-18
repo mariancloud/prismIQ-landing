@@ -88,8 +88,7 @@ export function Navbar() {
           <Link href="/security" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             Security
           </Link>
-          <Link href="/about" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }}
-            onClick={() => setMobileOpen(false)}
+          <Link href="/about" className="text-base font-semibold transition-colors" style={{ color: '#D1D5DB' }} onClick={() => setMobileOpen(false)}>
             About
           </Link>
           <Link 
