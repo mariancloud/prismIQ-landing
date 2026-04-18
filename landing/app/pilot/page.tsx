@@ -25,11 +25,6 @@ const payers = [
   "Other",
 ]
 
-export const metadata = {
-  title: "Request a Pilot - PrismIQ",
-  description: "Share a sample of denied claims. We'll analyze them and return a ready-to-send appeal for your hardest denial within 48 hours.",
-}
-
 export default function PilotPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)

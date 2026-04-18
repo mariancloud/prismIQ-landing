@@ -6,17 +6,11 @@ import { Menu, X } from 'lucide-react'
 
 function PrismLogo() {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Center triangle outline in white */}
-      <polygon points="20,6 34,30 6,30" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Rainbow rays dispersing from center point (20, 18) */}
-      <line x1="20" y1="18" x2="20" y2="2" stroke="#FF6B6B" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="32" y2="6" stroke="#FFA500" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="38" y2="20" stroke="#FFD700" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="28" y2="36" stroke="#00FF88" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="12" y2="36" stroke="#00F5A0" strokeWidth="1.2" strokeLinecap="round" />
-      <line x1="20" y1="18" x2="2" y2="20" stroke="#0088FF" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
+    <img 
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
+      alt="PrismIQ Logo"
+      className="w-10 h-10 object-contain"
+    />
   )
 }
 
@@ -34,16 +28,16 @@ export function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: 'var(--text-muted)' }}>
+          <Link href="/" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: '#6B7280' }}>
             Home
           </Link>
-          <Link href="/product" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: 'var(--text-muted)' }}>
+          <Link href="/product" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: '#6B7280' }}>
             Product
           </Link>
-          <Link href="/security" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: 'var(--text-muted)' }}>
+          <Link href="/security" className="text-sm font-medium hover:text-accent-teal transition-colors"             style={{ color: '#6B7280' }}>
             Security
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-accent-teal transition-colors" style={{ color: 'var(--text-muted)' }}>
+          <Link href="/about" className="text-sm font-medium hover:text-accent-teal transition-colors"             style={{ color: '#6B7280' }}>
             About
           </Link>
         </div>
