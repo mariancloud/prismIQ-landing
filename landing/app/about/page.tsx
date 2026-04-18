@@ -132,4 +132,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
+    </main>
+  )
 }
