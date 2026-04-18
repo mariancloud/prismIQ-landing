@@ -9,19 +9,44 @@ export default function ProductPage() {
   return (
     <main style={{ background: '#070D1A', minHeight: '100vh', paddingTop: '80px' }}>
       {/* Section 1: Page Hero */}
-      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section style={{ paddingTop: '64px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           {/* Left: Hero Copy */}
           <div className="space-y-6">
-            <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0' }}>
-              MERIDIAN - navigating thru complexity
+            <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', letterSpacing: '0.1em', fontVariant: 'small-caps' }}>
+              THE PLATFORM — BUILT FOR SPECIALTY BILLING
             </div>
             <h1 style={{ fontSize: '48px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1.2' }}>
               Built for how specialty billing actually works
             </h1>
             <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: '1.6' }}>
-              From the moment a claim is submitted through final payment — or appeal — PrismIQ handles the complexity that medical billing teams spend weeks and weeks trying to manage manually.
+              PrismIQ gives specialty billing teams a single command center — real-time denial intelligence, payer policy analysis, and appeal generation, all in one platform. Built for the practices where a single denied claim can mean $15,000–$40,000 in revenue that should never have left.
             </p>
+            <div className="flex items-center gap-6 pt-2">
+              <Link
+                href="#claim-iq"
+                className="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+                style={{
+                  backgroundColor: '#00F5A0',
+                  color: '#070D1A'
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)'
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none'
+                }}
+              >
+                See Claim IQ™ →
+              </Link>
+              <Link
+                href="#risk-check"
+                style={{ color: '#6B7280', marginLeft: '24px' }}
+                className="hover:text-white transition-colors"
+              >
+                See Risk Check →
+              </Link>
+            </div>
           </div>
 
           {/* Right: 835 Claim Flow Screenshot */}
@@ -43,7 +68,7 @@ export default function ProductPage() {
       </section>
 
       {/* Section 2: Claim IQ */}
-      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#0E1626', borderTop: '1px solid #1A2438' }} className="px-4">
+      <section id="claim-iq" style={{ paddingTop: '80px', paddingBottom: '80px', background: '#0E1626', borderTop: '1px solid #1A2438' }} className="px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Steps List */}
           <div className="space-y-8">
@@ -117,7 +142,7 @@ export default function ProductPage() {
       </section>
 
       {/* Section 3: Risk Check */}
-      <section style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
+      <section id="risk-check" style={{ paddingTop: '80px', paddingBottom: '80px', background: '#070D1A' }} className="px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Copy */}
           <div className="space-y-6">
