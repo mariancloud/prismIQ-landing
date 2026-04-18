@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import { ClaimIqUI } from '@/components/claim-iq-ui'
+import { RiskCheckUI } from '@/components/risk-check-ui'
 
 export default function ProductPage() {
   return (
@@ -23,21 +25,18 @@ export default function ProductPage() {
 
           {/* Right: 835 Claim Flow Screenshot */}
           <div style={{
-            background: '#0E1626',
-            border: '1px solid #1A2438',
-            borderRadius: '16px',
-            padding: '0',
-            minHeight: '400px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden'
+            paddingRight: '48px'
           }}>
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
-              alt="835 Claim Flow Dashboard"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+            <div style={{
+              background: '#0E1626',
+              border: '1px solid #1A2438',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
+              padding: '16px'
+            }}>
+              <ClaimIqUI />
+            </div>
           </div>
         </div>
       </section>
@@ -100,21 +99,18 @@ export default function ProductPage() {
 
           {/* Right: Claim IQ Interface Screenshot */}
           <div style={{
-            background: '#070D1A',
-            border: '1px solid #1A2438',
-            borderRadius: '16px',
-            padding: '0',
-            minHeight: '500px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden'
+            paddingRight: '48px'
           }}>
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop"
-              alt="Claim IQ Interface"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+            <div style={{
+              background: '#0E1626',
+              border: '1px solid #1A2438',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
+              padding: '16px'
+            }}>
+              <ClaimIqUI />
+            </div>
           </div>
         </div>
       </section>
@@ -150,21 +146,18 @@ export default function ProductPage() {
 
           {/* Right: Risk Check Dashboard Screenshot */}
           <div style={{
-            background: '#0E1626',
-            border: '1px solid #1A2438',
-            borderRadius: '16px',
-            padding: '0',
-            minHeight: '500px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden'
+            paddingRight: '48px'
           }}>
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=500&fit=crop"
-              alt="Risk Check Dashboard"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+            <div style={{
+              background: '#0E1626',
+              border: '1px solid #1A2438',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
+              padding: '16px'
+            }}>
+              <RiskCheckUI />
+            </div>
           </div>
         </div>
       </section>
