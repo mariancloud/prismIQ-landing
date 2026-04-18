@@ -35,7 +35,7 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: '#0E1626', border: '1px solid #1A2438' }}>
               <div className="w-2 h-2 rounded-full" style={{ background: '#00F5A0' }} />
               <span className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0' }}>
-                Accepting Pilot Practices — Q2 2025
+                Accepting Pilot Practices — Q2 2026
               </span>
             </div>
 
