@@ -1,19 +1,6 @@
 'use client'
 
-const securityFeatures = [
-  {
-    title: "HIPAA Compliance",
-    description: "All PHI processed through PrismIQ is handled in full accordance with HIPAA requirements. Data is encrypted in transit (TLS 1.2+) and at rest (AES-256). We do not use patient data to train our models — ever."
-  },
-  {
-    title: "BAA Ready",
-    description: "PrismIQ executes Business Associate Agreements with all pilot and production customers before any claims data is shared. A BAA is included as standard in pilot onboarding and takes less than 24 hours to execute."
-  },
-  {
-    title: "SOC 2 Type II (In Progress)",
-    description: "We are currently completing our SOC 2 Type II audit. Security documentation and our current controls framework are available to enterprise customers and RCM partners on request."
-  },
-]
+import { SecurityBadges } from '@/components/security-badges'
 
 export default function SecurityPage() {
   return (
@@ -33,36 +20,10 @@ export default function SecurityPage() {
         </div>
       </section>
 
-      {/* Security Features */}
+      {/* Security Badges */}
       <section style={{ paddingTop: '72px', paddingBottom: '72px', background: 'var(--background)' }} className="px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            {securityFeatures.map((feature) => (
-              <div
-                key={feature.title}
-                style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '12px',
-                  padding: '40px'
-                }}
-                className="transition-all duration-300 hover:border-accent-teal"
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 32px rgba(0, 245, 160, 0.08)'
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = 'none'
-                }}
-              >
-                <h3 style={{ fontSize: '22px', fontWeight: 'bold', color: 'var(--text-primary)', marginBottom: '16px' }} className="text-white">
-                  {feature.title}
-                </h3>
-                <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <SecurityBadges />
 
           {/* Contact */}
           <div className="text-center mt-16">
