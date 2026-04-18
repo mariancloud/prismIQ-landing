@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export function StatBandSection() {
   return (
-    <section style={{ background: '#0E1626', paddingTop: '80px', paddingBottom: '80px' }} className="px-4">
-      <div className="max-w-4xl mx-auto">
+    <section style={{ background: '#0E1626', paddingTop: '80px', paddingBottom: '80px' }}>
+      <div className="max-w-4xl mx-auto px-4">
         {/* Stat Block */}
         <div className="text-center mb-12" style={{ marginBottom: '48px' }}>
           <h2 className="text-white" style={{ fontSize: '32px', fontWeight: 'bold', lineHeight: '1.3', marginBottom: '16px', maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto' }}>

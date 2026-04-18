@@ -20,7 +20,7 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section style={{ paddingTop: '128px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
+    <section style={{ paddingTop: '128px', paddingBottom: '64px', background: '#070D1A' }} className="px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
