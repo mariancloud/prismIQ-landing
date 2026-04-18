@@ -5,9 +5,9 @@ export function TestimonialSection() {
     <section style={{ paddingTop: '128px', paddingBottom: '128px', background: '#070D1A' }} className="px-4">
       <div className="max-w-3xl mx-auto text-center space-y-8">
         {/* Eyebrow */}
-        <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', textDecoration: 'none' }}>
+        <span className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0', textDecoration: 'none !important', borderBottom: 'none !important' }}>
           PHYSICIAN ADVISORY BOARD
-        </div>
+        </span>
 
         {/* Decorative rule */}
         <div style={{ width: '48px', height: '2px', background: '#00F5A0', display: 'block', margin: '0 auto 32px auto' }}></div>
