@@ -2,55 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: #070D1A;
-    --surface: #0E1626;
-    --border: #1A2438;
-    --accent-teal: #00F5A0;
-    --accent-red: #F87171;
-    --accent-amber: #FBBF24;
-    --text-primary: #FFFFFF;
-    --text-secondary: #D1D5DB;
-    --text-muted: #6B7280;
-    --radius: 0.5rem;
-  }
+* {
+  background-color: inherit;
+}
 
+@layer base {
   html {
-    background-color: #070D1A;
-    scroll-behavior: smooth;
+    background-color: #070D1A !important;
+    color: #D1D5DB !important;
   }
   
   body {
-    background-color: #070D1A;
-    color: #D1D5DB;
-    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: #070D1A !important;
+    color: #D1D5DB !important;
+    font-family: system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+  }
+
+  p, span, div, a {
+    color: inherit;
+  }
+
+  a {
+    color: #00F5A0;
+  }
+
+  button {
+    color: inherit;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .text-pretty {
-    text-wrap: pretty;
-  }
+/* Input focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #00F5A0 !important;
+  box-shadow: 0 0 0 3px rgba(0, 245, 160, 0.1) !important;
+}
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Custom animations */
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
-}
-
-@keyframes progress-fill {
-  from { width: 0%; }
-  to { width: 80%; }
 }
 
 @keyframes fade-up {
@@ -68,35 +73,14 @@
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
-.animate-progress-fill {
-  animation: progress-fill 2s ease-out forwards;
-}
-
 .animate-fade-up {
   animation: fade-up 0.4s ease-out forwards;
 }
 
-/* Focus styles */
-input:focus, textarea:focus, select:focus {
-  @apply outline-none border-primary;
-  box-shadow: 0 0 0 3px rgba(0, 245, 160, 0.08);
+.text-balance {
+  text-wrap: balance;
 }
 
-/* Page transitions */
-.page-transition {
-  animation: fadeIn 0.2s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Hero radial glow */
-.hero-glow {
-  background: radial-gradient(
-    600px circle at 75% 50%,
-    rgba(0, 245, 160, 0.04) 0%,
-    transparent 70%
-  );
+.text-pretty {
+  text-wrap: pretty;
 }
