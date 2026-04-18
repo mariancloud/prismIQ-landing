@@ -11,7 +11,7 @@ export default function ProductPage() {
           {/* Left: Hero Copy */}
           <div className="space-y-6">
             <div className="text-xs font-medium tracking-widest uppercase" style={{ color: '#00F5A0' }}>
-              THE PLATFORM
+              MERIDIAN - navigating thru complexity
             </div>
             <h1 style={{ fontSize: '48px', fontWeight: '700', color: '#FFFFFF', lineHeight: '1.2' }}>
               Built for how specialty billing actually works
