@@ -10,7 +10,7 @@ function PrismLogo() {
       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-17%20at%206.44.12%E2%80%AFPM-wFM53ra7XHtHZ5fL0exxmt9zD1mLAf.png"
       alt="PrismIQ Logo"
       className="object-contain"
-      style={{ width: '44px', height: '44px', minWidth: '44px' }}
+      style={{ width: '44px', height: '44px', minWidth: '44px', display: 'block' }}
     />
   )
 }
