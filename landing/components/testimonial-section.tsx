@@ -20,7 +20,7 @@ export function TestimonialSection() {
         {/* Attribution */}
         <div className="space-y-4 pt-4">
           <p style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }} className="text-white">
-            Darina Stanyekeva, MD
+            Darina Stankeyeva, MD
           </p>
           <div className="inline-flex px-3 py-1.5 rounded-full text-xs font-medium" style={{
             background: '#1A2438',
