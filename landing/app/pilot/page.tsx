@@ -14,6 +14,8 @@ export default function PilotPage() {
       prev.includes(payer) ? prev.filter(p => p !== payer) : [...prev, payer]
     )
   }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSubmitting(true)
     const form = e.currentTarget
