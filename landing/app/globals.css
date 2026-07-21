@@ -76,3 +76,43 @@ input:focus, textarea:focus, select:focus {
 .animate-fade-up {
   animation: fade-up 0.4s ease-out forwards;
 }
+
+/* Closed-loop diagram animated return arc */
+@keyframes loop-dash {
+  to { stroke-dashoffset: -32; }
+}
+
+.loop-arc-animate {
+  stroke-dasharray: 6 10;
+  animation: loop-dash 1.2s linear infinite;
+}
+
+/* Hero return arrow that draws itself on a slow loop */
+@keyframes loop-draw {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  8% { opacity: 1; }
+  55% { stroke-dashoffset: 0; opacity: 1; }
+  85% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 1000; opacity: 0; }
+}
+
+.loop-arc-draw {
+  stroke-dasharray: 1000;
+  animation: loop-draw 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loop-arc-animate {
+    animation: none;
+    stroke-dasharray: none;
+  }
+  .loop-arc-draw {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  .animate-fade-up {
+    animation: none;
+  }
+}

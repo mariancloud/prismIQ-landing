@@ -2,7 +2,15 @@
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
-  }
+  },
+  async redirects() {
+    return [
+      { source: '/product', destination: '/platform', permanent: true },
+      { source: '/pilot', destination: '/demo', permanent: true },
+      { source: '/about', destination: '/company', permanent: true },
+      { source: '/security', destination: '/trust', permanent: true },
+    ]
+  },
 }
 
 export default nextConfig
