@@ -12,17 +12,18 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://prismiqlabs.ai"),
   title: {
-    default: "PrismIQ - AI-Powered Denial Management for Healthcare",
+    default: "PrismIQ — AI Revenue Cycle Management for Specialty Practices",
     template: "%s | PrismIQ"
   },
   description:
-    "Overturn denials with policy-level precision. PrismIQ is an AI-powered healthcare revenue cycle management platform focused on denial management for orthopedic and spine specialty practices.",
-  keywords: ["denial management", "healthcare RCM", "medical billing", "appeal automation", "orthopedic billing", "spine surgery billing"],
+    "One AI system across the full revenue cycle — intake through collections. Stop denials before they start.",
+  keywords: ["revenue cycle management", "healthcare RCM", "medical billing", "prior authorization", "denial management", "orthopedic billing", "spine billing", "cardiology billing"],
   authors: [{ name: "PrismIQ Labs" }],
   openGraph: {
-    title: "PrismIQ - AI-Powered Denial Management",
-    description: "Overturn denials with policy-level precision.",
+    title: "PrismIQ — AI Revenue Cycle Management for Specialty Practices",
+    description: "One AI system across the full revenue cycle — intake through collections. Stop denials before they start.",
     url: "https://prismiqlabs.ai",
     siteName: "PrismIQ",
     type: "website",

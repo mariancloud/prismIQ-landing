@@ -76,3 +76,23 @@ input:focus, textarea:focus, select:focus {
 .animate-fade-up {
   animation: fade-up 0.4s ease-out forwards;
 }
+
+/* Closed-loop diagram animated return arc */
+@keyframes loop-dash {
+  to { stroke-dashoffset: -32; }
+}
+
+.loop-arc-animate {
+  stroke-dasharray: 6 10;
+  animation: loop-dash 1.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loop-arc-animate {
+    animation: none;
+    stroke-dasharray: none;
+  }
+  .animate-fade-up {
+    animation: none;
+  }
+}

@@ -13,16 +13,17 @@ function PrismLogo() {
 
 const footerLinks = {
   product: [
-    { href: "/", label: "Home" },
-    { href: "/product", label: "Product" },
-    { href: "/security", label: "Security" },
+    { href: "/platform", label: "Platform" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/specialties", label: "Specialties" },
   ],
   company: [
-    { href: "/about", label: "About" },
-    { href: "/pilot", label: "Request a Pilot" },
+    { href: "/company", label: "Company" },
+    { href: "/demo", label: "Book a Demo" },
     { href: "mailto:hello@prismiqlabs.ai", label: "hello@prismiqlabs.ai" },
   ],
   legal: [
+    { href: "/security", label: "Security" },
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
   ],
@@ -113,7 +114,7 @@ export function Footer() {
               ✓ BAA Ready
             </div>
             <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
-              ✓ SOC 2 In Progress
+              ✓ SOC 2
             </div>
           </div>
         </div>
