@@ -48,9 +48,9 @@ export function FinalCTA({
           <Link
             href="/demo"
             className="text-sm font-medium transition-colors"
-            style={{ color: '#6B7280' }}
+            style={{ color: '#8A93A5' }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#D1D5DB')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#6B7280')}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8A93A5')}
           >
             or book a live demo <span aria-hidden="true">→</span>
           </Link>

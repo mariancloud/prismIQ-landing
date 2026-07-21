@@ -71,9 +71,6 @@ export function AudienceSplit() {
             reconciliation at scale. Full visibility into denial root causes, appeal outcomes, and recovery projections —
             across every client practice, in real time.
           </p>
-          <p style={{ fontSize: '14px', color: '#6B7280', lineHeight: 1.6 }}>
-            Integrates directly with Epic, athenahealth, NextGen, and eClinicalWorks via API and FHIR.
-          </p>
         </Panel>
       </div>
     </section>

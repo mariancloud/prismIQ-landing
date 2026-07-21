@@ -52,7 +52,7 @@ export function Footer() {
                   <Link
                     href={link.href}
                     className="text-sm transition-colors hover:text-accent-teal"
-                    style={{ color: '#6B7280' }}
+                    style={{ color: '#8A93A5' }}
                   >
                     {link.label}
                   </Link>
@@ -70,7 +70,7 @@ export function Footer() {
                   <Link
                     href={link.href}
                     className="text-sm transition-colors hover:text-accent-teal"
-                    style={{ color: '#6B7280' }}
+                    style={{ color: '#8A93A5' }}
                   >
                     {link.label}
                   </Link>
@@ -88,7 +88,7 @@ export function Footer() {
                   <Link
                     href={link.href}
                     className="text-sm transition-colors hover:text-accent-teal"
-                    style={{ color: '#6B7280' }}
+                    style={{ color: '#8A93A5' }}
                   >
                     {link.label}
                   </Link>
@@ -101,19 +101,19 @@ export function Footer() {
         {/* Bottom divider */}
         <div style={{ borderTop: '1px solid #1A2438', paddingTop: '24px' }} className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <p className="text-sm" style={{ color: '#6B7280' }}>
+          <p className="text-sm" style={{ color: '#8A93A5' }}>
             © 2025 PrismIQ Labs, Inc.
           </p>
 
           {/* Compliance badges */}
           <div className="flex items-center gap-4">
-            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#8A93A5' }}>
               ✓ HIPAA Compliant
             </div>
-            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#8A93A5' }}>
               ✓ BAA Ready
             </div>
-            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#6B7280' }}>
+            <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#8A93A5' }}>
               ✓ SOC 2
             </div>
           </div>

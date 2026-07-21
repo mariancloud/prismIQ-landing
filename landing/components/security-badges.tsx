@@ -137,7 +137,7 @@ export function SecurityBadges() {
           <p
             style={{
               fontSize: '11px',
-              color: '#6B7280',
+              color: '#8A93A5',
               lineHeight: '1.4',
             }}
           >

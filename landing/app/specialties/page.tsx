@@ -66,9 +66,8 @@ export default function SpecialtiesPage() {
       {/* Geographic proof band */}
       <section style={{ paddingTop: "56px", paddingBottom: "56px", background: "#0B1220", borderTop: "1px solid #1A2438", borderBottom: "1px solid #1A2438" }} className="px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <p style={{ fontSize: "16px", color: "#6B7280", lineHeight: 1.6 }}>
-            Currently deployed at leading orthopedic, spine, and cardiology practices across the Bay Area and Southern
-            California.
+          <p style={{ fontSize: "16px", color: "#8A93A5", lineHeight: 1.6 }}>
+            In active pilot deployments with 2&ndash;25 provider specialty practices across California
           </p>
         </div>
       </section>

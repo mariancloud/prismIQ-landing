@@ -202,7 +202,7 @@ export default function DenialTeardownPage() {
                 </div>
               </div>
 
-              <p style={{ fontSize: '13px', color: '#6B7280', lineHeight: 1.6 }} className="text-pretty">
+              <p style={{ fontSize: '13px', color: '#8A93A5', lineHeight: 1.6 }} className="text-pretty">
                 De-identified data only. We&apos;ll execute a BAA before receiving anything containing PHI.
               </p>
 

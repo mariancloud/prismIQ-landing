@@ -36,7 +36,7 @@ export function PlatformColumns() {
             >
               <div
                 className="uppercase"
-                style={{ fontSize: '12px', letterSpacing: '0.12em', color: '#6B7280', marginBottom: '12px' }}
+                style={{ fontSize: '12px', letterSpacing: '0.12em', color: '#8A93A5', marginBottom: '12px' }}
               >
                 {phase.label}
               </div>
@@ -75,7 +75,7 @@ export function PlatformColumns() {
                   <span>
                     <span
                       className="block uppercase"
-                      style={{ fontSize: '11px', letterSpacing: '0.12em', color: '#6B7280', marginBottom: '4px' }}
+                      style={{ fontSize: '11px', letterSpacing: '0.12em', color: '#8A93A5', marginBottom: '4px' }}
                     >
                       {phase.label}
                     </span>

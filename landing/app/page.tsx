@@ -1,4 +1,5 @@
 import { HomeHero } from "@/components/home/home-hero"
+import { IntegrationStrip } from "@/components/integration-strip"
 import { StatementSection } from "@/components/statement-section"
 import { PlatformColumns } from "@/components/home/platform-columns"
 import { ClosedLoopSection } from "@/components/closed-loop-section"
@@ -17,6 +18,8 @@ export default function HomePage() {
     <div className="page-transition">
       <HomeHero />
 
+      <IntegrationStrip />
+
       {/* The Problem */}
       <StatementSection heading="Why RCM still breaks">
         <p style={{ fontSize: "18px", color: "#D1D5DB", lineHeight: 1.6 }}>
@@ -27,6 +30,13 @@ export default function HomePage() {
           A claim gets denied. Your billing team appeals it and wins. But the intake error that caused it never gets
           flagged — so it happens again next month, on the next patient, on the next claim.
         </p>
+        <div>
+          <p style={{ fontSize: "18px", color: "#D1D5DB", lineHeight: 1.6 }}>
+            US healthcare writes off over $260B a year in denied, delayed, and underpaid claims. Most of it is
+            preventable.
+          </p>
+          <p style={{ fontSize: "13px", color: "#8A93A5", lineHeight: 1.6, marginTop: "6px" }}>Source: Premier Inc., 2024</p>
+        </div>
         <p style={{ fontSize: "22px", color: "#FFFFFF", lineHeight: 1.4, fontWeight: 600 }}>
           That gap between the back office and the front desk is where the money disappears.
         </p>

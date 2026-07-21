@@ -7,6 +7,7 @@ export type Phase = {
   number: string
   label: string
   heading: string
+  metric: string
   blocks: PhaseBlock[]
 }
 
@@ -15,6 +16,7 @@ export const phases: Phase[] = [
     number: '01',
     label: 'Before the Claim',
     heading: 'Stop the denial before it starts.',
+    metric: 'Prior auth turnaround: 5 days → 14 hours',
     blocks: [
       {
         subheading: 'Intake',
@@ -34,6 +36,7 @@ export const phases: Phase[] = [
     number: '02',
     label: 'During the Claim',
     heading: 'Get it right the first time.',
+    metric: 'First-pass clean claim rate: 89% → 95%',
     blocks: [
       {
         subheading: 'Coding & Charge Capture',
@@ -49,6 +52,7 @@ export const phases: Phase[] = [
     number: '03',
     label: 'After the Claim',
     heading: "Recover what you're owed.",
+    metric: 'Days in A/R: 46 → 32',
     blocks: [
       {
         subheading: 'Denial Management & Appeals',

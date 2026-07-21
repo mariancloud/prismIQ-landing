@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/page-hero"
 import { FinalCTA } from "@/components/final-cta"
 import { InlineCTALink } from "@/components/inline-cta-link"
+import { IntegrationStrip } from "@/components/integration-strip"
 import { phases } from "@/components/platform-data"
 
 export const metadata = {
@@ -52,6 +53,9 @@ export default function PlatformPage() {
                 >
                   {phase.heading}
                 </h2>
+                <div style={{ marginTop: "14px", color: "#00F5A0", fontSize: "16px", fontWeight: 600, letterSpacing: "-0.01em" }}>
+                  {phase.metric}
+                </div>
               </div>
             </div>
 
@@ -77,14 +81,7 @@ export default function PlatformPage() {
         </section>
       ))}
 
-      {/* Integrations strip */}
-      <section style={{ paddingTop: "56px", paddingBottom: "56px", background: "#070D1A", borderTop: "1px solid #1A2438" }} className="px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p style={{ fontSize: "16px", color: "#6B7280", lineHeight: 1.6 }}>
-            Integrates directly with Epic, athenahealth, NextGen, and eClinicalWorks via API and FHIR.
-          </p>
-        </div>
-      </section>
+      <IntegrationStrip />
 
       <FinalCTA headline="See this running on your claims, not our slides." />
     </div>

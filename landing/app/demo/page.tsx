@@ -140,7 +140,7 @@ export default function DemoPage() {
                 />
               </div>
 
-              <div className="flex items-center justify-center gap-8 py-6 text-xs font-medium" style={{ color: '#6B7280' }}>
+              <div className="flex items-center justify-center gap-8 py-6 text-xs font-medium" style={{ color: '#8A93A5' }}>
                 <div className="flex items-center gap-2">
                   <span style={{ color: '#00F5A0' }}>✓</span>
                   <span>HIPAA Compliant</span>

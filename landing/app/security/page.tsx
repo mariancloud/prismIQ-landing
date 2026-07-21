@@ -44,7 +44,7 @@ export default function SecurityPage() {
           <h2 style={{ fontSize: '32px', fontWeight: 'bold', color: '#FFFFFF' }} className="text-white">
             Security questions answered. Ready to see the platform?
           </h2>
-          <p style={{ fontSize: '16px', color: '#6B7280' }}>
+          <p style={{ fontSize: '16px', color: '#8A93A5' }}>
             Request a pilot. We&apos;ll return a policy-cited appeal for your hardest denial within 48 hours.
           </p>
           <Link
