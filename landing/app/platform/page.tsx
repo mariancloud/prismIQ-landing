@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/page-hero"
 import { FinalCTA } from "@/components/final-cta"
+import { InlineCTALink } from "@/components/inline-cta-link"
 import { phases } from "@/components/platform-data"
 
 export const metadata = {
@@ -64,6 +65,14 @@ export default function PlatformPage() {
                 </div>
               ))}
             </div>
+
+            {phase.number === "02" && (
+              <div className="mt-12">
+                <InlineCTALink href="/denial-teardown">
+                  This is the part most tools skip. See it on your claims
+                </InlineCTALink>
+              </div>
+            )}
           </div>
         </section>
       ))}
@@ -77,7 +86,7 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      <FinalCTA />
+      <FinalCTA headline="See this running on your claims, not our slides." />
     </div>
   )
 }

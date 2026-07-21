@@ -51,7 +51,7 @@ export default function HomePage() {
       <ClosedLoopSection />
       <AudienceSplit />
       <SpecialtiesCallout />
-      <FinalCTA />
+      <FinalCTA headline="See what PrismIQ finds in your last 90 days of denials." />
     </div>
   )
 }

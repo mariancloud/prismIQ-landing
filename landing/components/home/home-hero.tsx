@@ -72,16 +72,21 @@ export function HomeHero() {
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)')}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = 'none')}
               >
-                Book a Demo <span aria-hidden="true">→</span>
+                See it run on your data <span aria-hidden="true">→</span>
               </Link>
               <Link
                 href="/how-it-works"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-sm transition-colors"
                 style={{ color: '#D1D5DB', border: '1px solid #1A2438' }}
               >
-                See How It Works <span aria-hidden="true">→</span>
+                See a real appeal we drafted <span aria-hidden="true">→</span>
               </Link>
             </div>
+
+            <p style={{ fontSize: '13px', color: '#6B7280', lineHeight: 1.6, maxWidth: '64ch' }} className="text-pretty">
+              Built for 2–25 provider specialty practices and ambulatory surgical centers · Percentage of recovered
+              revenue — we only win when you collect · Connected to your EHR/PM system and running in under 30 days
+            </p>
           </div>
 
           {/* Right column — restrained closed-loop vector */}

@@ -163,7 +163,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <FinalCTA />
+      <FinalCTA headline="Send us 90 days of denials. We'll show you the pattern." />
     </div>
   )
 }

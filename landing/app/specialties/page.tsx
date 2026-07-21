@@ -73,7 +73,7 @@ export default function SpecialtiesPage() {
         </div>
       </section>
 
-      <FinalCTA />
+      <FinalCTA headline="See a real authorization packet PrismIQ filed for a case like yours." />
     </div>
   )
 }

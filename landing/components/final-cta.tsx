@@ -2,7 +2,13 @@
 
 import Link from 'next/link'
 
-export function FinalCTA() {
+type FinalCTAProps = {
+  headline?: string
+}
+
+export function FinalCTA({
+  headline = 'See what PrismIQ finds in your last 90 days of denials.',
+}: FinalCTAProps) {
   return (
     <section
       style={{
@@ -19,14 +25,15 @@ export function FinalCTA() {
           className="text-white text-balance"
           style={{ fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.02em' }}
         >
-          Revenue cycle problems don&apos;t fix themselves. They compound.
+          {headline}
         </h2>
-        <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: 1.6 }} className="max-w-2xl mx-auto">
-          See what PrismIQ looks like running on your data.
+        <p style={{ fontSize: '18px', color: '#D1D5DB', lineHeight: 1.6 }} className="max-w-2xl mx-auto text-pretty">
+          Send a de-identified remittance sample. We&apos;ll come back with the recurring root causes, what they cost
+          you, and which ones are preventable upstream. About a week. No call required.
         </p>
-        <div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link
-            href="/demo"
+            href="/denial-teardown"
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-sm transition-all duration-200"
             style={{ backgroundColor: '#00F5A0', color: '#070D1A' }}
             onMouseEnter={(e) => {
@@ -36,12 +43,18 @@ export function FinalCTA() {
               ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
             }}
           >
-            Book a Demo <span aria-hidden="true">→</span>
+            Start a denial teardown <span aria-hidden="true">→</span>
+          </Link>
+          <Link
+            href="/demo"
+            className="text-sm font-medium transition-colors"
+            style={{ color: '#6B7280' }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#D1D5DB')}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#6B7280')}
+          >
+            or book a live demo <span aria-hidden="true">→</span>
           </Link>
         </div>
-        <p style={{ fontSize: '13px', color: '#6B7280', lineHeight: 1.6 }} className="max-w-xl mx-auto">
-          Currently live across multi-specialty, multi-practice groups in the Bay Area and Southern California.
-        </p>
       </div>
     </section>
   )

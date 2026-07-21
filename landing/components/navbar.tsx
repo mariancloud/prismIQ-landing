@@ -77,7 +77,7 @@ export function Navbar() {
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0, 245, 160, 0.2)')}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = 'none')}
           >
-            Book a Demo <span aria-hidden="true">→</span>
+            See it run on your data <span aria-hidden="true">→</span>
           </Link>
         </div>
 
@@ -119,7 +119,7 @@ export function Navbar() {
               style={{ backgroundColor: '#00F5A0', color: '#070D1A' }}
               onClick={() => setMobileOpen(false)}
             >
-              Book a Demo <span aria-hidden="true">→</span>
+              See it run on your data <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

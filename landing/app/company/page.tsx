@@ -50,7 +50,7 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <FinalCTA />
+      <FinalCTA headline="See what PrismIQ finds in your last 90 days of denials." />
     </div>
   )
 }
