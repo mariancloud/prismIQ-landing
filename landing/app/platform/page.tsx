@@ -13,11 +13,10 @@ export const metadata = {
 export default function PlatformPage() {
   return (
     <div className="page-transition">
-      <PageHero title="One system. Every phase. Closed loop.">
+      <PageHero eyebrow="What It Does" title="Everything the revenue cycle needs, in one system.">
         <p>
-          PrismIQ is a single AI layer across the full revenue cycle — patient access, eligibility, prior authorization,
-          coding, claims, denial management, remittance, and patient collections. Every downstream outcome feeds back
-          into upstream rules automatically.
+          PrismIQ runs the full cycle — patient access, eligibility, prior authorization, coding, claims, denial
+          management, remittance, and patient collections. Here is what it does at each phase, and the outcome it moves.
         </p>
       </PageHero>
 

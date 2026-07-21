@@ -19,7 +19,7 @@ export function PlatformColumns() {
             className="text-white text-balance"
             style={{ fontSize: 'clamp(28px, 4.5vw, 44px)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.02em' }}
           >
-            How it works
+            What PrismIQ does across the cycle
           </h2>
         </div>
 

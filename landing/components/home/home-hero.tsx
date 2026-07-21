@@ -47,7 +47,7 @@ export function HomeHero() {
               className="uppercase"
               style={{ fontSize: '12px', letterSpacing: '0.12em', color: '#8A93A5', lineHeight: 1.6, maxWidth: '52ch' }}
             >
-              In active pilot deployments with 2–25 provider specialty practices across California
+              Powering 2–25 provider specialty practices across California and nationwide
             </p>
 
             <h1
