@@ -34,14 +34,14 @@ export default function CompanyPage() {
               <span style={{ color: "#00F5A0" }}>✓</span> HIPAA Compliant
             </span>
             <span style={{ fontSize: "14px", color: "#D1D5DB" }}>
-              <span style={{ color: "#00F5A0" }}>✓</span> BAA Ready
+              <span style={{ color: "#00F5A0" }}>✓</span> BAA executed with all customers
             </span>
             <span style={{ fontSize: "14px", color: "#D1D5DB" }}>
-              <span style={{ color: "#00F5A0" }}>✓</span> SOC 2
+              <span style={{ color: "#00F5A0" }}>✓</span> SOC 2 Type I complete, Type II in progress
             </span>
           </div>
           <Link
-            href="/security"
+            href="/trust"
             className="inline-flex items-center gap-2 font-semibold text-sm transition-colors"
             style={{ color: "#00F5A0" }}
           >

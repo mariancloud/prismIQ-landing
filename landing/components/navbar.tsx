@@ -19,6 +19,7 @@ const navLinks = [
   { href: '/platform', label: 'Platform' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/specialties', label: 'Specialties' },
+  { href: '/trust', label: 'Trust' },
   { href: '/company', label: 'Company' },
 ]
 

@@ -147,11 +147,11 @@ export default function DemoPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <span style={{ color: '#00F5A0' }}>✓</span>
-                  <span>BAA Ready</span>
+                  <span>BAA executed with all customers</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span style={{ color: '#00F5A0' }}>✓</span>
-                  <span>SOC 2</span>
+                  <span>SOC 2 Type I complete, Type II in progress</span>
                 </div>
               </div>
 

@@ -23,7 +23,7 @@ const footerLinks = {
     { href: "mailto:hello@prismiqlabs.ai", label: "hello@prismiqlabs.ai" },
   ],
   legal: [
-    { href: "/security", label: "Security" },
+    { href: "/trust", label: "Security" },
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
   ],
@@ -106,15 +106,15 @@ export function Footer() {
           </p>
 
           {/* Compliance badges */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
             <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#8A93A5' }}>
               ✓ HIPAA Compliant
             </div>
             <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#8A93A5' }}>
-              ✓ BAA Ready
+              ✓ BAA executed with all customers
             </div>
             <div className="text-xs font-medium px-3 py-1.5 rounded-full border" style={{ borderColor: '#1A2438', color: '#8A93A5' }}>
-              ✓ SOC 2
+              ✓ SOC 2 Type I complete, Type II in progress
             </div>
           </div>
         </div>
