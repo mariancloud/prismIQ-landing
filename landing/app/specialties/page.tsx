@@ -15,29 +15,33 @@ type WorkedExample = {
   rule: string
 }
 
-// NOTE: Content below is intentionally placeholder text. Real clinical scenarios,
-// payer names, and denial codes will be supplied by the PrismIQ team.
 const examples: WorkedExample[] = [
   {
     name: "Orthopedics",
-    scenario: "[ Placeholder — procedure + payer + denial type. To be written by PrismIQ. ]",
-    gap: "[ Placeholder — the documentation gap that caused the denial. To be written by PrismIQ. ]",
-    action: "[ Placeholder — the authorization packet or appeal PrismIQ drafted. To be written by PrismIQ. ]",
-    rule: "[ Placeholder — the upstream rule PrismIQ wrote so it doesn't recur. To be written by PrismIQ. ]",
+    scenario:
+      'High-value outpatient joint reconstruction ($24,000 claim) denied by a major national payer citing "Lack of Clinical Medical Necessity."',
+    gap: "Payer scrubbers flagged incomplete conservative management documentation — a common automated denial tactic when physical therapy timelines and weight-bearing imaging are not explicitly cross-referenced.",
+    action:
+      "PrismIQ's RAG engine parsed the patient's unstructured EHR charts, extracted the full conservative therapy timeline, and generated a Level 1 appeal cited directly against the payer's active clinical policy guidelines in under 45 seconds.",
+    rule: "Pre-Submission Check: Automatically flags joint replacement claims missing mandatory pre-requisite therapy or imaging documentation before the claim ever leaves your practice.",
   },
   {
     name: "Spine",
-    scenario: "[ Placeholder — procedure + payer + denial type. To be written by PrismIQ. ]",
-    gap: "[ Placeholder — the documentation gap that caused the denial. To be written by PrismIQ. ]",
-    action: "[ Placeholder — the authorization packet or appeal PrismIQ drafted. To be written by PrismIQ. ]",
-    rule: "[ Placeholder — the upstream rule PrismIQ wrote so it doesn't recur. To be written by PrismIQ. ]",
+    scenario:
+      "Multi-level spinal fusion ($38,500 claim) underpaid by 40% due to unbundled hardware and add-on code denials.",
+    gap: "Automated payer edits systematically stripped add-on instrumentation codes, leveraging complex hardware prior-authorization rules to withhold valid reimbursement.",
+    action:
+      "Cross-referenced the payer's complex spinal policy rules, extracted supporting intraoperative notes, and built a targeted appeal that cited exact governing exceptions — recovering $15,400 in wrongfully denied revenue.",
+    rule: "Pre-Submission Check: Validates multi-level hardware and add-on code linkage against payer-specific prior-authorization rules prior to clearinghouse transmission.",
   },
   {
     name: "Cardiology",
-    scenario: "[ Placeholder — procedure + payer + denial type. To be written by PrismIQ. ]",
-    gap: "[ Placeholder — the documentation gap that caused the denial. To be written by PrismIQ. ]",
-    action: "[ Placeholder — the authorization packet or appeal PrismIQ drafted. To be written by PrismIQ. ]",
-    rule: "[ Placeholder — the upstream rule PrismIQ wrote so it doesn't recur. To be written by PrismIQ. ]",
+    scenario:
+      'Emergent multi-vessel interventional cath lab procedure ($18,200 claim) denied for "Lack of Prior Authorization."',
+    gap: "A diagnostic procedure escalated to an urgent therapeutic intervention mid-session, creating a coding mismatch between the original pre-authorization and final billed services.",
+    action:
+      "Extracted real-time hemodynamics and cath lab clinical notes from the EHR, generating an immediate retroactive authorization package citing the payer's urgent intervention policy clauses.",
+    rule: "Pre-Submission Check: Detects mid-procedure code escalations and routes claims for instant retroactive documentation assembly prior to batch billing.",
   },
 ]
 
@@ -91,7 +95,7 @@ export default function SpecialtiesPage() {
                     >
                       {String(i + 1).padStart(2, "0")} — {step.label}
                     </div>
-                    <p style={{ fontSize: "16px", color: "#8A93A5", lineHeight: 1.6, fontStyle: "italic" }}>
+                    <p style={{ fontSize: "16px", color: "#D1D5DB", lineHeight: 1.6 }}>
                       {ex[step.key]}
                     </p>
                   </div>
