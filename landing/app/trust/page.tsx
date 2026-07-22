@@ -7,38 +7,42 @@ export const metadata = {
     "Where the human stays in the loop, how PrismIQ handles PHI, how every decision is logged, our compliance posture, and what onboarding looks like.",
 }
 
-// Rows for the human-in-the-loop table. The two policy columns are intentionally
-// left as marked placeholders — fill in the actual per-row policy in the arrays below.
-const workflowStages = [
-  "Intake validation",
-  "Eligibility check",
-  "Prior authorization",
-  "Coding & charge capture",
-  "Claims submission",
-  "Denial appeals",
-  "Remittance posting",
-  "Patient collections",
+// Rows for the human-in-the-loop oversight table.
+const oversightRows = [
+  {
+    stage: "835 / ERA intake & parsing",
+    prismiq:
+      "Ingests clearinghouse 835 feeds, translates complex CARC/RARC codes, and categorizes denials by recovery confidence.",
+    human: "Biller reviews the flagged high-priority claim queue and selects claims for action.",
+  },
+  {
+    stage: "Payer policy matching",
+    prismiq:
+      "RAG engine cross-references clinical charts against live payer policy manuals to identify missing documentation.",
+    human: "Clinical biller confirms extracted chart notes align with payer criteria.",
+  },
+  {
+    stage: "Denial appeal generation",
+    prismiq: "Auto-drafts fully cited, policy-backed Level 1 & Level 2 appeal packages in under 60 seconds.",
+    human: "Billing specialist reviews, makes final edits, and approves the appeal package.",
+  },
+  {
+    stage: "Pre-submission risk check",
+    prismiq:
+      "Scans pre-billed surgical claims for documentation gaps, unbundling risks, and missing medical-necessity rules.",
+    human: "Authorization manager reviews flagged high-risk claims before batch release.",
+  },
+  {
+    stage: "Retro-authorization assembly",
+    prismiq: "Gathers clinical intraoperative notes and hemodynamics data for mid-procedure code escalations.",
+    human: "Practice manager verifies the clinical packet before submitting the retro-auth request.",
+  },
+  {
+    stage: "Claim submission & export",
+    prismiq: "Formats approved appeal packets into payer-ready PDF/Word documents or direct portal exports.",
+    human: "Staff submits the appeal directly via the payer portal or practice-management queue.",
+  },
 ]
-
-function Placeholder({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      style={{
-        display: "inline-block",
-        fontSize: "12px",
-        fontWeight: 600,
-        letterSpacing: "0.04em",
-        color: "#00F5A0",
-        border: "1px dashed #2A3A55",
-        borderRadius: "6px",
-        padding: "4px 10px",
-        background: "rgba(0, 245, 160, 0.04)",
-      }}
-    >
-      {children}
-    </span>
-  )
-}
 
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
@@ -96,99 +100,164 @@ export default function TrustPage() {
         <div className="max-w-6xl mx-auto">
           <SectionHeading eyebrow="Oversight" title="Where the human stays in the loop" />
 
-          <div style={{ border: "1px solid #1A2438", borderRadius: "12px", overflow: "hidden" }}>
-            <div className="overflow-x-auto">
-              <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "640px" }}>
-                <thead>
-                  <tr style={{ background: "#0E1626" }}>
-                    <th
-                      style={{
-                        textAlign: "left",
-                        padding: "16px 20px",
-                        fontSize: "13px",
-                        fontWeight: 700,
-                        color: "#FFFFFF",
-                        letterSpacing: "0.02em",
-                        borderBottom: "1px solid #1A2438",
-                        width: "34%",
-                      }}
-                    >
-                      Workflow stage
-                    </th>
-                    <th
-                      style={{
-                        textAlign: "left",
-                        padding: "16px 20px",
-                        fontSize: "13px",
-                        fontWeight: 700,
-                        color: "#FFFFFF",
-                        letterSpacing: "0.02em",
-                        borderBottom: "1px solid #1A2438",
-                        width: "33%",
-                      }}
-                    >
+          {/* Desktop / tablet: real table */}
+          <div
+            className="hidden md:block"
+            style={{ background: "#0E1626", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", overflow: "hidden" }}
+          >
+            <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed" }}>
+              <thead>
+                <tr>
+                  <th
+                    scope="col"
+                    style={{
+                      textAlign: "left",
+                      verticalAlign: "top",
+                      padding: "18px 20px",
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "#FFFFFF",
+                      letterSpacing: "0.02em",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
+                      width: "22%",
+                    }}
+                  >
+                    Workflow stage
+                  </th>
+                  <th
+                    scope="col"
+                    style={{
+                      textAlign: "left",
+                      verticalAlign: "top",
+                      padding: "18px 20px",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
+                      width: "39%",
+                    }}
+                  >
+                    <span style={{ display: "block", fontSize: "13px", fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.02em" }}>
                       PrismIQ acts
-                    </th>
-                    <th
-                      style={{
-                        textAlign: "left",
-                        padding: "16px 20px",
-                        fontSize: "13px",
-                        fontWeight: 700,
-                        color: "#FFFFFF",
-                        letterSpacing: "0.02em",
-                        borderBottom: "1px solid #1A2438",
-                        width: "33%",
-                      }}
+                    </span>
+                    <span
+                      className="uppercase"
+                      style={{ display: "block", fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#00F5A0", marginTop: "4px" }}
                     >
+                      AI co-pilot
+                    </span>
+                  </th>
+                  <th
+                    scope="col"
+                    style={{
+                      textAlign: "left",
+                      verticalAlign: "top",
+                      padding: "18px 20px",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
+                      width: "39%",
+                    }}
+                  >
+                    <span style={{ display: "block", fontSize: "13px", fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.02em" }}>
                       Human approves
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {workflowStages.map((stage, i) => (
-                    <tr key={stage} style={{ background: i % 2 === 0 ? "#070D1A" : "#0A1120" }}>
-                      <td
+                    </span>
+                    <span
+                      className="uppercase"
+                      style={{ display: "block", fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#AAB2C0", marginTop: "4px" }}
+                    >
+                      Staff control
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {oversightRows.map((row, i) => {
+                  const cellBorder = i < oversightRows.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none"
+                  return (
+                    <tr key={row.stage}>
+                      <th
+                        scope="row"
                         style={{
-                          padding: "18px 20px",
+                          textAlign: "left",
+                          padding: "20px",
                           fontSize: "15px",
                           fontWeight: 600,
                           color: "#FFFFFF",
-                          borderBottom: i < workflowStages.length - 1 ? "1px solid #1A2438" : "none",
+                          borderBottom: cellBorder,
                           verticalAlign: "top",
                         }}
                       >
-                        {stage}
+                        {row.stage}
+                      </th>
+                      <td
+                        style={{
+                          padding: "20px",
+                          fontSize: "14px",
+                          color: "#AAB2C0",
+                          lineHeight: 1.5,
+                          borderBottom: cellBorder,
+                          verticalAlign: "top",
+                        }}
+                      >
+                        {row.prismiq}
                       </td>
                       <td
                         style={{
-                          padding: "18px 20px",
-                          borderBottom: i < workflowStages.length - 1 ? "1px solid #1A2438" : "none",
+                          padding: "20px",
+                          fontSize: "14px",
+                          color: "#AAB2C0",
+                          lineHeight: 1.5,
+                          borderBottom: cellBorder,
                           verticalAlign: "top",
                         }}
                       >
-                        <Placeholder>EDIT: PrismIQ action</Placeholder>
-                      </td>
-                      <td
-                        style={{
-                          padding: "18px 20px",
-                          borderBottom: i < workflowStages.length - 1 ? "1px solid #1A2438" : "none",
-                          verticalAlign: "top",
-                        }}
-                      >
-                        <Placeholder>EDIT: Human approval</Placeholder>
+                        {row.human}
                       </td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  )
+                })}
+              </tbody>
+            </table>
           </div>
 
-          <p style={{ fontSize: "13px", color: "#8A93A5", lineHeight: 1.6, marginTop: "16px" }}>
-            The &ldquo;PrismIQ acts&rdquo; and &ldquo;Human approves&rdquo; cells are editable placeholders. Fill in the
-            actual policy per row.
-          </p>
+          {/* Mobile: stacked cards */}
+          <div className="md:hidden flex flex-col gap-4">
+            {oversightRows.map((row) => (
+              <div
+                key={row.stage}
+                style={{ background: "#0E1626", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", padding: "20px" }}
+              >
+                <div className="text-white" style={{ fontSize: "16px", fontWeight: 600, marginBottom: "16px" }}>
+                  {row.stage}
+                </div>
+
+                <div
+                  style={{
+                    background: "rgba(0, 245, 160, 0.06)",
+                    border: "1px solid rgba(0, 245, 160, 0.18)",
+                    borderRadius: "10px",
+                    padding: "14px 16px",
+                    marginBottom: "12px",
+                  }}
+                >
+                  <div className="uppercase" style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", color: "#00F5A0", marginBottom: "6px" }}>
+                    PrismIQ acts · AI co-pilot
+                  </div>
+                  <p style={{ fontSize: "14px", color: "#D1D5DB", lineHeight: 1.5 }}>{row.prismiq}</p>
+                </div>
+
+                <div
+                  style={{
+                    background: "#0B1220",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: "10px",
+                    padding: "14px 16px",
+                  }}
+                >
+                  <div className="uppercase" style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", color: "#AAB2C0", marginBottom: "6px" }}>
+                    Human approves · Staff control
+                  </div>
+                  <p style={{ fontSize: "14px", color: "#D1D5DB", lineHeight: 1.5 }}>{row.human}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
