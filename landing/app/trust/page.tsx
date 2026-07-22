@@ -60,6 +60,40 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) 
   )
 }
 
+function PolicyCard({ blocks }: { blocks: { title: string; body: React.ReactNode }[] }) {
+  return (
+    <div
+      style={{
+        background: "#0E1626",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: "12px",
+        padding: "32px",
+      }}
+    >
+      <div className="flex flex-col" style={{ gap: "28px" }}>
+        {blocks.map((block, i) => (
+          <div
+            key={block.title}
+            style={{
+              paddingTop: i > 0 ? "28px" : 0,
+              borderTop: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none",
+            }}
+          >
+            <h3 className="text-white" style={{ fontSize: "19px", fontWeight: 600, lineHeight: 1.3, marginBottom: "10px" }}>
+              {block.title}
+            </h3>
+            <p style={{ fontSize: "16px", color: "#B4BCC9", lineHeight: 1.6, maxWidth: "68ch" }}>{block.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function Emphasis({ children }: { children: React.ReactNode }) {
+  return <strong style={{ color: "#00F5A0", fontWeight: 600 }}>{children}</strong>
+}
+
 function PolicyPlaceholderBlock({ note }: { note: string }) {
   return (
     <div
@@ -268,7 +302,26 @@ export default function TrustPage() {
       >
         <div className="max-w-4xl mx-auto">
           <SectionHeading eyebrow="Data Handling" title="Your data is not our training data" />
-          <PolicyPlaceholderBlock note="Placeholder for the model-training and PHI-handling policy — whether customer PHI is ever used to train or fine-tune models, how data is isolated per customer, retention windows, sub-processors, and de-identification. This is the number one question from any security reviewer." />
+          <PolicyCard
+            blocks={[
+              {
+                title: "Zero model training on customer PHI",
+                body: "PrismIQ operates under strict zero-retention and zero-training guarantees. Protected Health Information (PHI) and practice data are never used to train, fine-tune, or evaluate foundation models, proprietary LLMs, or third-party AI services.",
+              },
+              {
+                title: "Tenant isolation & security",
+                body: (
+                  <>
+                    All patient data and EDI 835 feeds are logically isolated in customer-dedicated infrastructure using
+                    enterprise-grade encryption — <Emphasis>AES-256</Emphasis> at rest and <Emphasis>TLS 1.3</Emphasis> in
+                    transit. Data processed during appeal generation resides strictly within ephemeral memory environments
+                    and is purged immediately upon task completion, according to HIPAA guidelines and custom data-retention
+                    schedules. All sub-processors are vetted under strict Business Associate Agreements (BAAs).
+                  </>
+                ),
+              },
+            ]}
+          />
         </div>
       </section>
 
@@ -279,7 +332,25 @@ export default function TrustPage() {
       >
         <div className="max-w-4xl mx-auto">
           <SectionHeading eyebrow="Traceability" title="Every decision is logged and attributable" />
-          <PolicyPlaceholderBlock note="Placeholder for the audit trail and traceability policy — what is logged for each agent action, how a decision can be traced back to the input, model version, and policy citation, how long logs are retained, and how customers access them." />
+          <PolicyCard
+            blocks={[
+              {
+                title: "Immutable audit logging",
+                body: "PrismIQ maintains a complete, tamper-evident audit trail for every action taken across your claims. Every generated appeal, policy match, and pre-submission risk score is logged with an immutable timestamp, user ID, system model version, and exact input-prompt metadata.",
+              },
+              {
+                title: "Policy citation lineage",
+                body: (
+                  <>
+                    Never guess how a recommendation was formed. Every output includes deterministic lineage tracing back
+                    to the specific payer policy clause, clinical guideline, and underlying EHR chart note used. Audit logs
+                    are retained for <Emphasis>7 years</Emphasis> in compliance with HIPAA requirements and can be exported
+                    on demand via customer administrative portals for internal compliance reviews.
+                  </>
+                ),
+              },
+            ]}
+          />
         </div>
       </section>
 
